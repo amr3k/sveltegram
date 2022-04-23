@@ -36,7 +36,7 @@ import { Post } from 'sveltelegram';
 ```
 
 ### API
-  
+
 | Property             | Type    | Default   | Description                                                            |
 | -------------------- | ------- | --------- | ---------------------------------------------------------------------- |
 | `link` **Required**  | string  |           | Telegram post link (_You can find it in context menu_)                 |
