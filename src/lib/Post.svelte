@@ -1,36 +1,39 @@
 <script>
-	/** @type {string}*/
-	export let postLink;
-
-	/** @type {boolean}*/
-	export let avatar = true;
+	import { fade } from 'svelte/transition';
 
 	/** @type {string}*/
-	export let accentColor = '#2f81f6';
+	export let link;
 
 	/** @type {string}*/
-	export let accentColorInDarkMode = '#89baff';
+	export let color = '#2f81f6';
+
+	/** @type {string}*/
+	export let colorDark = '#89baff';
 
 	/** @type {boolean}*/
 	export let darkMode = false;
 
-	const frameID = 'telegram-post-' + postLink.replace('https://t.me/', '').replace('/', '-');
+	/** @type {number}*/
+	export let transitionDuration = 200;
 
-	const userpic = avatar !== undefined ? `&userpic=${avatar}` : '';
+	const frameID = 'telegram-post-' + link.replace('https://t.me/', '').replace('/', '-');
 
-	$: frameSource = `https://t.me/computly/188?embed=1${userpic}&dark=${darkMode}&color=${accentColor.replace(
+	$: frameSource = `https://t.me/computly/188?embed=1&dark=${darkMode}&color=${color.replace(
 		'#',
 		''
-	)}&dark_color=${accentColorInDarkMode.replace('#', '')}`;
+	)}&dark_color=${colorDark.replace('#', '')}`;
 </script>
 
-<iframe
-	id={frameID}
-	src={frameSource}
-	scrolling="no"
-	style="overflow: hidden; border: medium none; min-width: 320px; height: 138px;"
-	width="100%"
-	height=""
-	frameborder="0"
-	title="Telegram post"
-/>
+{#key frameSource}
+	<iframe
+		id={frameID}
+		src={frameSource}
+		scrolling="no"
+		style="overflow: hidden; border: medium none; min-width: 320px; height: 138px;"
+		width="100%"
+		height=""
+		frameborder="0"
+		title="Telegram post"
+		transition:fade={{ duration: transitionDuration }}
+	/>
+{/key}

@@ -29,6 +29,6 @@
 				rgba(172, 172, 172, 0.06) 50%,
 				rgba(172, 172, 172, 0.06) 100%
 			),
-			linear-gradient(90deg, var(--bg-color), var(--bg-color));
+			linear-gradient(90deg, var(--bg-gradient-clr), var(--bg-gradient-clr));
 	}
 </style>
