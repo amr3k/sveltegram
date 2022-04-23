@@ -1,6 +1,8 @@
 {
 	"name": "sveltegram",
-	"version": "0.0.1",
+	"description": "Reactive Telegram widgets built with svelte",
+	"version": "0.0.2",
+	"license": "MIT",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
@@ -28,5 +30,19 @@
 		"svelte2tsx": "^0.5.9",
 		"typescript": "~4.6.3"
 	},
-	"type": "module"
+	"type": "module",
+	"author": "Amr <amr@computly.me> (http://portfolio.computly.me/)",
+	"keywords": [
+		"svelte",
+		"sveltekit",
+		"telegram",
+		"post",
+		"widget",
+		"embed"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/416d72/sveltegram"
+	},
+	"homepage": "https://sveltegram.computly.me"
 }

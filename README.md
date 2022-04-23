@@ -16,7 +16,7 @@ This package allows you to embed telegram widgets in your svelte web application
 
 Embed a telegram post widget in your svelte application.
 
-### [Demo](https://sveltegram.vercel.app)
+### [Demo](https://sveltegram.computly.me)
 
 ### How to use
 
