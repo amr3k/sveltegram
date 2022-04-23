@@ -1,10 +1,15 @@
-# Sveltelegram
+# Sveltegram
 
 This package allows you to embed telegram widgets in your svelte web application.
 
-<!-- Badges -->
+![GitHub branch checks state](https://img.shields.io/github/checks-status/416d72/sveltegram/main)
+![GitHub top language](https://img.shields.io/github/languages/top/416d72/sveltegram?color=%23ff0000)
 
-- [Sveltelegram](#sveltelegram)
+![GitHub language count](https://img.shields.io/github/languages/count/416d72/sveltegram)
+
+![npms.io (final)](https://img.shields.io/npms-io/final-score/sveltegram?color=%230d0)
+
+- [Sveltegram](#sveltegram)
   - [Post widget](#post-widget)
     - [Demo](#demo)
     - [How to use](#how-to-use)
@@ -22,12 +27,11 @@ Embed a telegram post widget in your svelte application.
 
 ```js
 <script>
-import { Post } from 'sveltelegram';
+import { Post } from 'sveltegram';
 </script>
 
 <Post
   link="https://t.me/computly/188"
-  avatar={true}
   color="#2f81f6"
   colorDark='#89baff'
   darkMode={false}

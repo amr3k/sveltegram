@@ -28,12 +28,14 @@
 	<iframe
 		id={frameID}
 		src={frameSource}
-		scrolling="no"
 		style="overflow: hidden; border: medium none; min-width: 320px; height: 138px;"
-		width="100%"
-		height=""
-		frameborder="0"
 		title="Telegram post"
 		transition:fade={{ duration: transitionDuration }}
 	/>
 {/key}
+
+<style>
+	iframe {
+		width: 100%;
+	}
+</style>

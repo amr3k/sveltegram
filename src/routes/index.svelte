@@ -28,6 +28,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Sveltegram</title>
+</svelte:head>
+
 <Background --bg-gradient-clr={$theme === 'dark' ? '#333333' : '#cccccc'} />
 <main>
 	<header>
@@ -246,6 +250,10 @@
 	.api .row span:first-child strong {
 		font-family: inherit;
 		color: var(--primary-clr);
+	}
+	.api .row span:nth-child(3) {
+		color: var(--desc-clr);
+		font-family: 'Courier New', Courier, monospace;
 	}
 	.api .row span:last-child {
 		grid-area: 2/1/3/4;
