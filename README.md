@@ -5,10 +5,11 @@ This package allows you to embed telegram widgets in your svelte web application
 ## [Demo](https://sveltegram.computly.me)
 
 ## Stats
-  
+
 [![Demo](https://img.shields.io/website?label=Demo&url=https%3A%2F%2Fsveltegram.computly.me)](https://sveltegram.computly.me)
 ![GitHub branch checks state](https://img.shields.io/github/checks-status/416d72/sveltegram/main)
 ![npms.io (final)](https://img.shields.io/npms-io/final-score/sveltegram?color=%23538c99)
+
 <!-- ![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/npm/sveltegram) -->
 <!-- ![npm](https://img.shields.io/npm/dw/sveltegram) -->
 
@@ -50,13 +51,15 @@ import { Post } from 'sveltegram';
 
 ### API
 
-| Property             | Type    | Default   | Description                                                            |
-| -------------------- | ------- | --------- | ---------------------------------------------------------------------- |
-| `link` **Required**  | string  |           | Telegram post link (_You can find it in context menu_)                 |
-| `color`              | string  | `#2f81f6` | Accent color                                                           |
-| `colorDark`          | string  | `#89baff` | Accent color in dark mode                                              |
-| `darkMode`           | boolean | `false`   | Enable dark mode                                                       |
-| `transitionDuration` | number  | `200`     | Duration of the fade transition effect (_Useful when switching theme_) |
+| Property              | Type    | Default                        | Description                                                            |
+| --------------------- | ------- | ------------------------------ | ---------------------------------------------------------------------- |
+| `link` **(Required)** | string  |                                | Telegram post link (_You can find it in context menu_)                 |
+| `title`               | string  | `Telegram post from @username` | Iframe title attribute                                                 |
+| `color`               | string  | `#2f81f6`                      | Accent color                                                           |
+| `colorDark`           | string  | `#89baff`                      | Accent color in dark mode                                              |
+| `darkMode`            | boolean | `false`                        | Enable dark mode                                                       |
+| `transitionDuration`  | number  | `200`                          | Duration of the fade transition effect (_Useful when switching theme_) |
+| `--height`            | number  | `200`                          | Iframe height                                                          |
 
 ## Comments widget
 
@@ -71,7 +74,10 @@ frame-src https://telegram.org;
 ```
 
 # TODO
-- [ ] Add title prop
+
+- [ ] Create comments widget
+- [x] Add height style prop
+- [x] Add title prop
 
 ## License
 

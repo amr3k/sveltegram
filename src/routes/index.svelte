@@ -1,15 +1,19 @@
 <script>
 	import { theme } from '../store/theme';
-	// import Post from 'sveltegram';
 	import Post from '$lib/Post.svelte';
-	import { browser } from '$app/env';
 	import { onMount } from 'svelte';
+	/** @type {string}*/
+	let postLink = 'https://t.me/computly/159';
+	/** @type {string}*/
+	let postTitle = 'Telegram post from @computly';
 	/** @type {string}*/
 	let postColor = '#2f81f6';
 	/** @type {string}*/
 	let postColorDark = '#89baff';
 	/** @type {number}*/
 	let postTransitionDuration = 200;
+	/** @type {number}*/
+	let postHeight = 200;
 	/** @type {boolean}*/
 	let darkThemeCheckbox = false;
 
@@ -56,15 +60,20 @@
 <code class="token tag">&lt;/script&gt;</code>
 <!-- I love pain -->
 <code class="token tag">&lt;Post</code> <code class="token attr-name">link=</code><code
-				class="token string">"https://t.me/computly/189"</code
-			> <code class="token attr-name">{$theme === 'dark' ? 'darkMode=' : ''}</code><code
+				class="token string">"{postLink}"</code
+			> <code class="token attr-name">title=</code><code class="token string">"{postTitle}"</code
+			><code class="token attr-name">{$theme === 'dark' ? ' darkMode=' : ''}</code><code
 				class="token builtin">{$theme === 'dark' ? '{true}' : ''}</code
 			> <code class="token attr-name">color=</code><code class="token string">"{postColor}"</code
 			> <code class="token attr-name">colorDark=</code><code class="token string"
 				>"{postColorDark}"</code
-			> {postTransitionDuration !== 200
-				? `<code class="token attr-name">transitionDuration=</code><code class="token function">${postTransitionDuration}</code>`
-				: ''} <code class="token tag">/&gt;</code></pre>
+			><code class="token attr-name"
+				>{postTransitionDuration !== 200 ? ` transitionDuration=` : ''}<code class="token function"
+					>{postTransitionDuration !== 200 ? `{${postTransitionDuration}}` : ''}</code
+				></code
+			><code class="token attr-name"> --height=</code><code class="token string"
+				>"{postHeight}px"</code
+			> <code class="token tag">/&gt;</code></pre>
 	</div>
 	<h3>Demo</h3>
 	<div class="controls">
@@ -75,6 +84,10 @@
 			bind:checked={darkThemeCheckbox}
 			on:change={switchTheme}
 		/>
+		<label for="post-link">Link</label>
+		<input type="text" id="post-link" bind:value={postLink} />
+		<label for="post-title">Title</label>
+		<input type="text" id="post-title" bind:value={postTitle} />
 		<label for="post-color"> Accent color </label>
 		<input type="color" id="post-color" bind:value={postColor} title={postColor} />
 		<label for="post-color2"> Accent color (Dark mode) </label>
@@ -89,15 +102,19 @@
 			bind:value={postTransitionDuration}
 			title={`${postTransitionDuration}ms`}
 		/>
+		<label for="post-height">Height</label>
+		<input type="number" id="post-height" bind:value={postHeight} />
 	</div>
 
 	<div class="widget">
 		<Post
-			link="https://t.me/computly/189"
+			link={postLink}
+			title={postTitle}
 			darkMode={$theme === 'dark'}
 			color={postColor}
 			colorDark={postColorDark}
 			transitionDuration={postTransitionDuration}
+			--height="{postHeight}px"
 		/>
 	</div>
 	<div class="api">
@@ -116,6 +133,12 @@
 				><strong>Description: </strong>Telegram post link. You can copy it from telegram context
 				menu</span
 			>
+		</div>
+		<div class="row">
+			<span>title</span>
+			<span>string</span>
+			<span>Telegram post from @&lt;username&gt;</span>
+			<span><strong>Description: </strong>Iframe title attribute</span>
 		</div>
 		<div class="row">
 			<span>darkMode</span>
@@ -140,6 +163,12 @@
 			<span>number</span>
 			<span>200</span>
 			<span><strong>Description: </strong>Transition duration</span>
+		</div>
+		<div class="row">
+			<span>--height</span>
+			<span>number</span>
+			<span>200</span>
+			<span><strong>Description: </strong>Iframe height</span>
 		</div>
 	</div>
 	<h2>Telegram Comments</h2>
@@ -242,6 +271,13 @@
 		gap: 2ch;
 		margin-bottom: 1rem;
 	}
+	.controls input[type='text'],
+	.controls input[type='number'] {
+		padding: 0.5em 1em;
+		border-radius: 5px;
+		border: none;
+		outline: none;
+	}
 	.controls input[type='checkbox'] {
 		width: 1.5rem;
 		height: 1.5rem;
@@ -255,10 +291,13 @@
 
 	pre {
 		border-radius: 10px;
+		line-height: 1.5;
+		font-size: 1em;
 	}
 
 	.widget {
-		height: 300px;
+		display: flex;
+		justify-content: center;
 		margin-bottom: 1rem;
 	}
 	.api > div {

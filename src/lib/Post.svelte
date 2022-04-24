@@ -5,6 +5,9 @@
 	export let link;
 
 	/** @type {string}*/
+	export let title = `Telegram post from @${link.replace('https://t.me/', '').split('/')[0]}`;
+
+	/** @type {string}*/
 	export let color = '#2f81f6';
 
 	/** @type {string}*/
@@ -16,27 +19,23 @@
 	/** @type {number}*/
 	export let transitionDuration = 200;
 
-	const frameID = 'telegram-post-' + link.replace('https://t.me/', '').replace('/', '-');
+	const id = 'telegram-post-' + link.replace('https://t.me/', '').replace('/', '-');
 
-	$: frameSource = `${link}?embed=1&dark=${darkMode}&color=${color.replace(
+	$: src = `${link}?embed=1&dark=${darkMode}&color=${color.replace(
 		'#',
 		''
 	)}&dark_color=${colorDark.replace('#', '')}`;
 </script>
 
-{#key frameSource}
-	<iframe
-		id={frameID}
-		src={frameSource}
-		title="Telegram post from @{link.replace('https://t.me/', '').split('/')[0]}"
-		transition:fade={{ duration: transitionDuration }}
-	/>
+{#key src}
+	<iframe {id} {src} {title} transition:fade={{ duration: transitionDuration }} />
 {/key}
 
+<!-- on:load={resizeIframe} -->
 <style>
 	iframe {
 		width: 100%;
-		height: 100%;
+		height: var(--height, 200px);
 		overflow: hidden;
 		border: none;
 	}
