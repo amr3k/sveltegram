@@ -25,6 +25,8 @@ This package allows you to embed telegram widgets in your svelte web application
     - [API](#api)
   - [Comments widget](#comments-widget)
 - [Content Security Policy](#content-security-policy)
+- [TODO](#todo)
+  - [License](#license)
 
 ## Post widget
 
@@ -67,3 +69,10 @@ If you are using CSP, you'll need to allow scripts and iFrames coming from `Tele
 ```js
 frame-src https://telegram.org;
 ```
+
+# TODO
+[] Add title prop
+
+## License
+
+[MIT](./LICENSE)
