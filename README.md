@@ -71,7 +71,7 @@ frame-src https://telegram.org;
 ```
 
 # TODO
-[ ] Add title prop
+- [ ] Add title prop
 
 ## License
 
