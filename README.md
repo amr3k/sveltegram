@@ -2,16 +2,25 @@
 
 This package allows you to embed telegram widgets in your svelte web application.
 
+## [Demo](https://sveltegram.computly.me)
+
+## Stats
+  
+[![Demo](https://img.shields.io/website?label=Demo&url=https%3A%2F%2Fsveltegram.computly.me)](https://sveltegram.computly.me)
 ![GitHub branch checks state](https://img.shields.io/github/checks-status/416d72/sveltegram/main)
-![GitHub top language](https://img.shields.io/github/languages/top/416d72/sveltegram?color=%23ff0000)
+![npms.io (final)](https://img.shields.io/npms-io/final-score/sveltegram?color=%23538c99)
+<!-- ![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/npm/sveltegram) -->
+<!-- ![npm](https://img.shields.io/npm/dw/sveltegram) -->
 
-![GitHub language count](https://img.shields.io/github/languages/count/416d72/sveltegram)
-
-![npms.io (final)](https://img.shields.io/npms-io/final-score/sveltegram?color=%230d0)
+![LICENSE](https://img.shields.io/github/license/416d72/sveltegram?style=flat&color=fcdaff)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/416d72/sveltegram?color=fffc35&label=Repo%20size)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/416d72/sveltegram?color=8e4700)
+[![Hits-of-Code](https://hitsofcode.com/github/416d72/sveltegram?branch=main)](https://hitsofcode.com/github/416d72/sveltegram/view?branch=main)
 
 - [Sveltegram](#sveltegram)
+  - [Demo](#demo)
+  - [Stats](#stats)
   - [Post widget](#post-widget)
-    - [Demo](#demo)
     - [How to use](#how-to-use)
     - [API](#api)
   - [Comments widget](#comments-widget)
@@ -20,8 +29,6 @@ This package allows you to embed telegram widgets in your svelte web application
 ## Post widget
 
 Embed a telegram post widget in your svelte application.
-
-### [Demo](https://sveltegram.computly.me)
 
 ### How to use
 
