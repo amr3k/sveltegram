@@ -1,7 +1,7 @@
 <script>
 	import { theme } from '$lib/Website/theme';
 	import Background from '$lib/Website/Background.svelte';
-	import TelegramPost from '$lib/Post.svelte';
+	import Post from 'sveltegram';
 	import { browser } from '$app/env';
 	/** @type {boolean}*/
 	let darkThemeCheckbox = $theme === 'dark';
@@ -84,7 +84,7 @@
 	</div>
 
 	<div class="widget">
-		<TelegramPost
+		<Post
 			link="https://t.me/computly/188"
 			darkMode={$theme === 'dark'}
 			color={postColor}
