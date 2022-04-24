@@ -1,38 +1,41 @@
 <script>
-	import { theme } from '$lib/Website/theme';
-	import Background from '$lib/Website/Background.svelte';
-	import Post from 'sveltegram';
+	import { theme } from '../store/theme';
+	// import Post from 'sveltegram';
+	import Post from '$lib/Post.svelte';
 	import { browser } from '$app/env';
-	/** @type {boolean}*/
-	let darkThemeCheckbox = $theme === 'dark';
+	import { onMount } from 'svelte';
 	/** @type {string}*/
 	let postColor = '#2f81f6';
 	/** @type {string}*/
 	let postColorDark = '#89baff';
-
 	/** @type {number}*/
 	let postTransitionDuration = 200;
+	/** @type {boolean}*/
+	let darkThemeCheckbox = false;
 
-	$: {
-		if (browser) {
-			theme.set(darkThemeCheckbox ? 'dark' : 'light');
-			darkThemeCheckbox
-				? document.body.classList.add('dark')
-				: document.body.classList.remove('dark');
-		}
-	}
 	if ($theme === null) {
-		const browserDarkMode =
+		const prefersDark =
 			window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-		theme.set(browserDarkMode ? 'dark' : 'light');
+		theme.set(prefersDark ? 'dark' : 'light');
 	}
+
+	const switchTheme = () => {
+		theme.set(darkThemeCheckbox ? 'dark' : 'light');
+		darkThemeCheckbox
+			? document.body.classList.add('dark')
+			: document.body.classList.remove('dark');
+	};
+	onMount(() => {
+		darkThemeCheckbox = $theme === 'dark';
+		switchTheme();
+	});
 </script>
 
 <svelte:head>
 	<title>Sveltegram</title>
 </svelte:head>
+<div class="background-svg" />
 
-<Background --bg-gradient-clr={$theme === 'dark' ? '#333333' : '#cccccc'} />
 <main>
 	<header>
 		<h1>Sveltegram</h1>
@@ -53,7 +56,7 @@
 <code class="token tag">&lt;/script&gt;</code>
 <!-- I love pain -->
 <code class="token tag">&lt;Post</code> <code class="token attr-name">link=</code><code
-				class="token string">"https://t.me/computly/188"</code
+				class="token string">"https://t.me/computly/189"</code
 			> <code class="token attr-name">{$theme === 'dark' ? 'darkMode=' : ''}</code><code
 				class="token builtin">{$theme === 'dark' ? '{true}' : ''}</code
 			> <code class="token attr-name">color=</code><code class="token string">"{postColor}"</code
@@ -66,7 +69,12 @@
 	<h3>Demo</h3>
 	<div class="controls">
 		<label for="post-dark-switch"> Dark mode </label>
-		<input type="checkbox" id="post-dark-switch" bind:checked={darkThemeCheckbox} />
+		<input
+			type="checkbox"
+			id="post-dark-switch"
+			bind:checked={darkThemeCheckbox}
+			on:change={switchTheme}
+		/>
 		<label for="post-color"> Accent color </label>
 		<input type="color" id="post-color" bind:value={postColor} title={postColor} />
 		<label for="post-color2"> Accent color (Dark mode) </label>
@@ -85,7 +93,7 @@
 
 	<div class="widget">
 		<Post
-			link="https://t.me/computly/188"
+			link="https://t.me/computly/189"
 			darkMode={$theme === 'dark'}
 			color={postColor}
 			colorDark={postColorDark}
@@ -142,9 +150,31 @@
 	:global(*) {
 		transition: all 200ms ease-in-out;
 	}
-	main {
+	:global(body) {
+		--svg-bg-grd-clr: #cccccc;
 		--bg-clr: hsla(0, 0%, 100%, 0.8);
 		--primary-clr: hsl(0, 0%, 10%);
+
+		--tbl-head-bg-clr: hsla(0, 0%, 100%, 0.2);
+		--tbl-odd-bg-clr: hsl(150 70% 80% / 0.1);
+		--tbl-even-bg-clr: hsl(40 100% 80% / 0.1);
+		--tbl-row-hov-clr: hsl(100 100% 80% / 0.5);
+		--prop-clr: hsl(210 100% 30%);
+		--desc-clr: hsl(0 0% 30%);
+	}
+	:global(body.dark) {
+		--svg-bg-grd-clr: #333333;
+		--bg-clr: hsla(0, 0%, 0%, 0.8);
+		--primary-clr: hsl(0, 0%, 90%);
+
+		--tbl-head-bg-clr: hsl(0 100% 0% / 0.2);
+		--tbl-odd-bg-clr: hsl(150 70% 20% / 0.1);
+		--tbl-even-bg-clr: hsl(40 100% 20% / 0.1);
+		--tbl-row-hov-clr: hsl(100 100% 20% / 0.5);
+		--prop-clr: hsl(210 100% 70%);
+		--desc-clr: hsl(0 0% 70%);
+	}
+	main {
 		position: relative;
 		width: min(90%, 600px);
 		margin: 0 auto;
@@ -155,9 +185,35 @@
 		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
 			Geneva, Verdana, sans-serif;
 	}
-	:global(body.dark) main {
-		--bg-clr: hsla(0, 0%, 0%, 0.8);
-		--primary-clr: hsl(0, 0%, 90%);
+	.background-svg {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		z-index: -1;
+		background-image: radial-gradient(
+				circle at 16% 83%,
+				rgba(148, 148, 148, 0.06) 0%,
+				rgba(148, 148, 148, 0.06) 50%,
+				rgba(63, 63, 63, 0.06) 50%,
+				rgba(63, 63, 63, 0.06) 100%
+			),
+			radial-gradient(
+				circle at 68% 87%,
+				rgba(66, 66, 66, 0.06) 0%,
+				rgba(66, 66, 66, 0.06) 50%,
+				rgba(105, 105, 105, 0.06) 50%,
+				rgba(105, 105, 105, 0.06) 100%
+			),
+			radial-gradient(
+				circle at 38% 50%,
+				rgba(123, 123, 123, 0.06) 0%,
+				rgba(123, 123, 123, 0.06) 50%,
+				rgba(172, 172, 172, 0.06) 50%,
+				rgba(172, 172, 172, 0.06) 100%
+			),
+			linear-gradient(90deg, var(--svg-bg-grd-clr), var(--svg-bg-grd-clr));
 	}
 	:is(h1, h2, h3) {
 		font-family: Lato, sans-serif;
@@ -202,24 +258,8 @@
 	}
 
 	.widget {
+		height: 300px;
 		margin-bottom: 1rem;
-	}
-	.api {
-		--tbl-head-bg-clr: hsla(0, 0%, 100%, 0.2);
-		--tbl-odd-bg-clr: hsl(150 70% 80% / 0.1);
-		--tbl-even-bg-clr: hsl(40 100% 80% / 0.1);
-		--tbl-row-hov-clr: hsl(100 100% 80% / 0.5);
-		--prop-clr: hsl(210 100% 30%);
-		--desc-clr: hsl(0 0% 30%);
-	}
-
-	:global(body.dark) .api {
-		--tbl-head-bg-clr: hsl(0 100% 0% / 0.2);
-		--tbl-odd-bg-clr: hsl(150 70% 20% / 0.1);
-		--tbl-even-bg-clr: hsl(40 100% 20% / 0.1);
-		--tbl-row-hov-clr: hsl(100 100% 20% / 0.5);
-		--prop-clr: hsl(210 100% 70%);
-		--desc-clr: hsl(0 0% 70%);
 	}
 	.api > div {
 		display: grid;

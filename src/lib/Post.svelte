@@ -18,7 +18,7 @@
 
 	const frameID = 'telegram-post-' + link.replace('https://t.me/', '').replace('/', '-');
 
-	$: frameSource = `https://t.me/computly/188?embed=1&dark=${darkMode}&color=${color.replace(
+	$: frameSource = `${link}?embed=1&dark=${darkMode}&color=${color.replace(
 		'#',
 		''
 	)}&dark_color=${colorDark.replace('#', '')}`;
@@ -28,8 +28,7 @@
 	<iframe
 		id={frameID}
 		src={frameSource}
-		style="overflow: hidden; border: medium none; min-width: 320px; height: 138px;"
-		title="Telegram post"
+		title="Telegram post from @{link.replace('https://t.me/', '').split('/')[0]}"
 		transition:fade={{ duration: transitionDuration }}
 	/>
 {/key}
@@ -37,5 +36,8 @@
 <style>
 	iframe {
 		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		border: none;
 	}
 </style>
