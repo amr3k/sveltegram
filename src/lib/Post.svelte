@@ -19,7 +19,7 @@
 	/** @type {number}*/
 	export let transitionDuration = 200;
 
-	const id = 'telegram-post-' + link.replace('https://t.me/', '').replace('/', '-');
+	const id = 'telegram-post-custom-' + link.replace('https://t.me/', '').replace('/', '-');
 
 	$: src = `${link}?embed=1&dark=${darkMode}&color=${color.replace(
 		'#',
@@ -31,7 +31,6 @@
 	<iframe {id} {src} {title} transition:fade={{ duration: transitionDuration }} />
 {/key}
 
-<!-- on:load={resizeIframe} -->
 <style>
 	iframe {
 		width: 100%;
