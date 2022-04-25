@@ -40,26 +40,18 @@ Embed a telegram post widget in your svelte application.
 import { Post } from 'sveltegram';
 </script>
 
-<Post
-  link="https://t.me/computly/188"
-  color="#2f81f6"
-  colorDark='#89baff'
-  darkMode={false}
-  transitionDuration={200}
-/>
+<Post link="https://t.me/computly/188" />
 ```
 
 ### API
 
-| Property              | Type    | Default                        | Description                                                            |
-| --------------------- | ------- | ------------------------------ | ---------------------------------------------------------------------- |
-| `link` **(Required)** | string  |                                | Telegram post link (_You can find it in context menu_)                 |
-| `title`               | string  | `Telegram post from @username` | Iframe title attribute                                                 |
-| `color`               | string  | `#2f81f6`                      | Accent color                                                           |
-| `colorDark`           | string  | `#89baff`                      | Accent color in dark mode                                              |
-| `darkMode`            | boolean | `false`                        | Enable dark mode                                                       |
-| `transitionDuration`  | number  | `200`                          | Duration of the fade transition effect (_Useful when switching theme_) |
-| `--height`            | number  | `200`                          | Iframe height                                                          |
+| Property              | Type    | Default                        | Description                                            |
+| --------------------- | ------- | ------------------------------ | ------------------------------------------------------ |
+| `link` **(Required)** | string  |                                | Telegram post link (_You can find it in context menu_) |
+| `title`               | string  | `Telegram post from @username` | Iframe title attribute                                 |
+| `color`               | string  | `#2f81f6`                      | Accent color                                           |
+| `colorDark`           | string  | `#89baff`                      | Accent color in dark mode                              |
+| `darkMode`            | boolean | `false`                        | Enable dark mode                                       |
 
 ## Comments widget
 
@@ -70,13 +62,13 @@ _**Coming soon...**_
 If you are using CSP, you'll need to allow scripts and iFrames coming from `Telegram` as follows:
 
 ```js
+script-src https://telegram.org;
 frame-src https://telegram.org;
 ```
 
 # TODO
 
 - [ ] Create comments widget
-- [x] Add height style prop
 - [x] Add title prop
 
 ## License
