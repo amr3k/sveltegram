@@ -1,5 +1,5 @@
 <script>
-	import { fade } from 'svelte/transition';
+	import { onMount } from 'svelte';
 
 	/** @type {string}*/
 	export let link;
@@ -16,26 +16,62 @@
 	/** @type {boolean}*/
 	export let darkMode = false;
 
-	/** @type {number}*/
-	export let transitionDuration = 200;
+	/** @type {HTMLDivElement}*/
+	let div;
+	/** @type {HTMLScriptElement}*/
+	let script;
+	const telegramPost = link.replace('https://t.me/', '');
 
-	const id = 'telegram-post-custom-' + link.replace('https://t.me/', '').replace('/', '-');
+	/** @type {string}*/
+	let iFrameSource;
 
-	$: src = `${link}?embed=1&dark=${darkMode}&color=${color.replace(
-		'#',
-		''
-	)}&dark_color=${colorDark.replace('#', '')}`;
+	$: {
+		iFrameSource = `${link}?embed=1&dark=${darkMode}&color=${color.replace(
+			'#',
+			''
+		)}&dark_color=${colorDark.replace('#', '')}`;
+		iFrameStuff();
+	}
+
+	const cleanStart = () => {
+		try {
+			div.innerHTML = '';
+			script = document.createElement('script');
+			script.src = 'https://telegram.org/js/telegram-widget.js?19';
+			script.setAttribute('async', 'true');
+			script.setAttribute('data-telegram-post', telegramPost);
+			script.setAttribute('data-width', '100%');
+			script.setAttribute('data-color', color.replace('#', ''));
+			script.setAttribute('data-dark-color', colorDark.replace('#', ''));
+			script.setAttribute('data-dark', `${darkMode}`);
+			div.appendChild(script);
+		} catch (e) {
+			console.error(e);
+		}
+	};
+
+	const iFrameStuff = () => {
+		try {
+			const iframe = div.getElementsByTagName('iframe')[0];
+			if (iframe) {
+				iframe.setAttribute('title', title);
+				iframe.src = iFrameSource;
+			}
+		} catch (e) {
+			// iFrame is not loaded yet
+		}
+	};
+
+	onMount(() => {
+		cleanStart();
+		iFrameStuff();
+	});
 </script>
 
-{#key src}
-	<iframe {id} {src} {title} transition:fade={{ duration: transitionDuration }} />
-{/key}
+<div bind:this={div} />
 
 <style>
-	iframe {
+	div {
 		width: 100%;
-		height: var(--height, 200px);
-		overflow: hidden;
-		border: none;
 	}
 </style>

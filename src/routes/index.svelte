@@ -1,6 +1,7 @@
 <script>
 	import { theme } from '../store/theme';
 	import Post from '$lib/Post.svelte';
+	import APISection from './_API.svelte';
 	import { onMount } from 'svelte';
 	/** @type {string}*/
 	let postLink = 'https://t.me/computly/159';
@@ -10,10 +11,6 @@
 	let postColor = '#2f81f6';
 	/** @type {string}*/
 	let postColorDark = '#89baff';
-	/** @type {number}*/
-	let postTransitionDuration = 200;
-	/** @type {number}*/
-	let postHeight = 200;
 	/** @type {boolean}*/
 	let darkThemeCheckbox = false;
 
@@ -67,12 +64,6 @@
 			> <code class="token attr-name">color=</code><code class="token string">"{postColor}"</code
 			> <code class="token attr-name">colorDark=</code><code class="token string"
 				>"{postColorDark}"</code
-			><code class="token attr-name"
-				>{postTransitionDuration !== 200 ? ` transitionDuration=` : ''}<code class="token function"
-					>{postTransitionDuration !== 200 ? `{${postTransitionDuration}}` : ''}</code
-				></code
-			><code class="token attr-name"> --height=</code><code class="token string"
-				>"{postHeight}px"</code
 			> <code class="token tag">/&gt;</code></pre>
 	</div>
 	<h3>Demo</h3>
@@ -92,18 +83,6 @@
 		<input type="color" id="post-color" bind:value={postColor} title={postColor} />
 		<label for="post-color2"> Accent color (Dark mode) </label>
 		<input type="color" id="post-color2" bind:value={postColorDark} title={postColorDark} />
-		<label for="post-transition"> Transition duration ({postTransitionDuration}ms)</label>
-		<input
-			type="range"
-			min="0"
-			max="1000"
-			step="100"
-			id="post-transition"
-			bind:value={postTransitionDuration}
-			title={`${postTransitionDuration}ms`}
-		/>
-		<label for="post-height">Height</label>
-		<input type="number" id="post-height" bind:value={postHeight} />
 	</div>
 
 	<div class="widget">
@@ -113,64 +92,9 @@
 			darkMode={$theme === 'dark'}
 			color={postColor}
 			colorDark={postColorDark}
-			transitionDuration={postTransitionDuration}
-			--height="{postHeight}px"
 		/>
 	</div>
-	<div class="api">
-		<h3>API</h3>
-		<div class="head">
-			<span>Property</span>
-			<span>Type</span>
-			<span>Default</span>
-		</div>
-
-		<div class="row">
-			<span>link <strong>(required)</strong></span>
-			<span>string</span>
-			<span />
-			<span
-				><strong>Description: </strong>Telegram post link. You can copy it from telegram context
-				menu</span
-			>
-		</div>
-		<div class="row">
-			<span>title</span>
-			<span>string</span>
-			<span>Telegram post from @&lt;username&gt;</span>
-			<span><strong>Description: </strong>Iframe title attribute</span>
-		</div>
-		<div class="row">
-			<span>darkMode</span>
-			<span>boolean</span>
-			<span>false</span>
-			<span><strong>Description: </strong>Enable dark mode</span>
-		</div>
-		<div class="row">
-			<span>Color</span>
-			<span>string</span>
-			<span>#2f81f6</span>
-			<span><strong>Description: </strong>Accent color</span>
-		</div>
-		<div class="row">
-			<span>colorDark</span>
-			<span>string</span>
-			<span>#89baff</span>
-			<span><strong>Description: </strong>Accent color in dark mode</span>
-		</div>
-		<div class="row">
-			<span>transitionDuration</span>
-			<span>number</span>
-			<span>200</span>
-			<span><strong>Description: </strong>Transition duration</span>
-		</div>
-		<div class="row">
-			<span>--height</span>
-			<span>number</span>
-			<span>200</span>
-			<span><strong>Description: </strong>Iframe height</span>
-		</div>
-	</div>
+	<APISection />
 	<h2>Telegram Comments</h2>
 	<h3>Coming soon ...</h3>
 </main>
@@ -272,8 +196,7 @@
 		gap: 2ch;
 		margin-bottom: 1rem;
 	}
-	.controls input[type='text'],
-	.controls input[type='number'] {
+	.controls input[type='text'] {
 		padding: 0.5em 1em;
 		border-radius: 5px;
 		border: none;
@@ -298,45 +221,10 @@
 
 	.widget {
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
+		align-items: center;
+		gap: 1rem;
 		margin-bottom: 1rem;
-	}
-	.api > div {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		padding: 0.5rem;
-	}
-	.api .head {
-		font-weight: bold;
-		background-color: var(--tbl-head-bg-clr);
-		border-radius: 5px 5px 0 0;
-	}
-	.api .row:nth-child(even) {
-		background-color: var(--tbl-even-bg-clr);
-	}
-	.api .row:nth-child(odd) {
-		background-color: var(--tbl-odd-bg-clr);
-	}
-	.api .row:hover {
-		background-color: var(--tbl-row-hov-clr);
-	}
-	.api .row:last-child {
-		border-radius: 0 0 5px 5px;
-	}
-	.api .row span:first-child {
-		font-family: 'Courier New', Courier, monospace;
-		color: var(--prop-clr);
-	}
-	.api .row span:first-child strong {
-		font-family: inherit;
-		color: var(--primary-clr);
-	}
-	.api .row span:nth-child(3) {
-		color: var(--desc-clr);
-		font-family: 'Courier New', Courier, monospace;
-	}
-	.api .row span:last-child {
-		grid-area: 2/1/3/4;
-		color: var(--desc-clr);
 	}
 </style>
