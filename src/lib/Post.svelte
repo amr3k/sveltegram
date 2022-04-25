@@ -5,9 +5,6 @@
 	export let link;
 
 	/** @type {string}*/
-	export let title = `Telegram post from @${link.replace('https://t.me/', '').split('/')[0]}`;
-
-	/** @type {string}*/
 	export let color = '#2f81f6';
 
 	/** @type {string}*/
@@ -54,7 +51,6 @@
 		try {
 			const iframe = div.getElementsByTagName('iframe')[0];
 			if (iframe) {
-				iframe.setAttribute('title', title);
 				iframe.src = iFrameSource;
 			}
 		} catch (e) {

@@ -15,12 +15,6 @@
 		>
 	</div>
 	<div class="row">
-		<span>title</span>
-		<span>string</span>
-		<span>Telegram post from @username</span>
-		<span><strong>Description: </strong>Iframe title attribute</span>
-	</div>
-	<div class="row">
 		<span>darkMode</span>
 		<span>boolean</span>
 		<span>false</span>

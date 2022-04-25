@@ -1,5 +1,7 @@
 # Sveltegram
 
+**Under development.**
+
 This package allows you to embed telegram widgets in your svelte web application.
 
 ## [Demo](https://sveltegram.computly.me)
@@ -26,7 +28,6 @@ This package allows you to embed telegram widgets in your svelte web application
     - [API](#api)
   - [Comments widget](#comments-widget)
 - [Content Security Policy](#content-security-policy)
-- [TODO](#todo)
   - [License](#license)
 
 ## Post widget
@@ -45,13 +46,12 @@ import { Post } from 'sveltegram';
 
 ### API
 
-| Property              | Type    | Default                        | Description                                            |
-| --------------------- | ------- | ------------------------------ | ------------------------------------------------------ |
-| `link` **(Required)** | string  |                                | Telegram post link (_You can find it in context menu_) |
-| `title`               | string  | `Telegram post from @username` | Iframe title attribute                                 |
-| `color`               | string  | `#2f81f6`                      | Accent color                                           |
-| `colorDark`           | string  | `#89baff`                      | Accent color in dark mode                              |
-| `darkMode`            | boolean | `false`                        | Enable dark mode                                       |
+| Property              | Type    | Default   | Description                                            |
+| --------------------- | ------- | --------- | ------------------------------------------------------ |
+| `link` **(Required)** | string  |           | Telegram post link (_You can find it in context menu_) |
+| `color`               | string  | `#2f81f6` | Accent color                                           |
+| `colorDark`           | string  | `#89baff` | Accent color in dark mode                              |
+| `darkMode`            | boolean | `false`   | Enable dark mode                                       |
 
 ## Comments widget
 
@@ -65,11 +65,6 @@ If you are using CSP, you'll need to allow scripts and iFrames coming from `Tele
 script-src https://telegram.org;
 frame-src https://telegram.org;
 ```
-
-# TODO
-
-- [ ] Create comments widget
-- [x] Add title prop
 
 ## License
 

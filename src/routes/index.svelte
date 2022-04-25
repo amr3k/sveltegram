@@ -6,8 +6,6 @@
 	/** @type {string}*/
 	let postLink = 'https://t.me/computly/159';
 	/** @type {string}*/
-	let postTitle = 'Telegram post from @computly';
-	/** @type {string}*/
 	let postColor = '#2f81f6';
 	/** @type {string}*/
 	let postColorDark = '#89baff';
@@ -58,7 +56,6 @@
 <!-- I love pain -->
 <code class="token tag">&lt;Post</code> <code class="token attr-name">link=</code><code
 				class="token string">"{postLink}"</code
-			> <code class="token attr-name">title=</code><code class="token string">"{postTitle}"</code
 			><code class="token attr-name">{$theme === 'dark' ? ' darkMode=' : ''}</code><code
 				class="token builtin">{$theme === 'dark' ? '{true}' : ''}</code
 			> <code class="token attr-name">color=</code><code class="token string">"{postColor}"</code
@@ -68,6 +65,8 @@
 	</div>
 	<h3>Demo</h3>
 	<div class="controls">
+		<label for="post-link">Link</label>
+		<input type="text" id="post-link" bind:value={postLink} />
 		<label for="post-dark-switch"> Dark mode </label>
 		<input
 			type="checkbox"
@@ -75,10 +74,6 @@
 			bind:checked={darkThemeCheckbox}
 			on:change={switchTheme}
 		/>
-		<label for="post-link">Link</label>
-		<input type="text" id="post-link" bind:value={postLink} />
-		<label for="post-title">Title</label>
-		<input type="text" id="post-title" bind:value={postTitle} />
 		<label for="post-color"> Accent color </label>
 		<input type="color" id="post-color" bind:value={postColor} title={postColor} />
 		<label for="post-color2"> Accent color (Dark mode) </label>
@@ -88,7 +83,6 @@
 	<div class="widget">
 		<Post
 			link={postLink}
-			title={postTitle}
 			darkMode={$theme === 'dark'}
 			color={postColor}
 			colorDark={postColorDark}
