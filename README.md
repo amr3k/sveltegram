@@ -1,7 +1,5 @@
 # Sveltegram
 
-**Under development.**
-
 This package allows you to embed telegram widgets in your svelte web application.
 
 ## [Demo](https://sveltegram.computly.me)

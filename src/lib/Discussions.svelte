@@ -11,24 +11,34 @@
 	export let colorDark = '#89baff';
 
 	/** @type {boolean}*/
+	export let colorfulNames = false;
+
+	/** @type {boolean}*/
 	export let darkMode = false;
 
-	/** @type {HTMLDivElement}*/
-	let div;
+	/** @type {number}*/
+	export let commentsLimit = 5;
+
+	/** @type {number|undefined}*/
+	export let height = undefined;
+
 	/** @type {HTMLScriptElement}*/
 	let script;
 	$: telegramPost = link.replace('https://t.me/', '');
 
 	/** @type {string}*/
 	let iFrameSource;
-
 	$: {
-		iFrameSource = `${link}?embed=1&dark=${darkMode}&color=${color.replace(
-			'#',
-			''
-		)}&dark_color=${colorDark.replace('#', '')}`;
+		iFrameSource = `${link}?embed=1&discussion=1&comments_limit=${commentsLimit}${
+			darkMode ? '&dark=1' : ''
+		}&color=${color.replace('#', '')}&dark_color=${colorDark.replace('#', '')}${
+			colorfulNames ? '&colorful=1' : ''
+		}${height ? `&height=${height}` : ''}`;
 		iFrameStuff();
 	}
+
+	/** @type {HTMLDivElement}*/
+	let div;
 
 	const cleanStart = () => {
 		try {
@@ -36,11 +46,16 @@
 			script = document.createElement('script');
 			script.src = 'https://telegram.org/js/telegram-widget.js?19';
 			script.setAttribute('async', 'true');
-			script.setAttribute('data-telegram-post', telegramPost);
-			script.setAttribute('data-width', '100%');
+			script.setAttribute('data-telegram-discussion', telegramPost);
 			script.setAttribute('data-color', color.replace('#', ''));
 			script.setAttribute('data-dark-color', colorDark.replace('#', ''));
+			script.setAttribute('data-colorful', `${colorfulNames ? '1' : '0'}`);
 			script.setAttribute('data-dark', `${darkMode}`);
+			script.setAttribute('data-comments-limit', `${commentsLimit}`);
+			if (height !== undefined) {
+				// The default height is set to "auto";
+				script.setAttribute('data-height', `${height}`);
+			}
 			div.appendChild(script);
 		} catch (e) {
 			console.error(e);
