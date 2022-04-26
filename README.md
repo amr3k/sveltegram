@@ -24,7 +24,9 @@ This package allows you to embed telegram widgets in your svelte web application
   - [Post widget](#post-widget)
     - [How to use](#how-to-use)
     - [API](#api)
-  - [Comments widget](#comments-widget)
+  - [Discussions widget](#discussions-widget)
+    - [How to use](#how-to-use-1)
+    - [API](#api-1)
 - [Content Security Policy](#content-security-policy)
   - [License](#license)
 
@@ -36,7 +38,7 @@ Embed a telegram post widget in your svelte application.
 
 ```js
 <script>
-import { Post } from 'sveltegram';
+  import { Post } from 'sveltegram';
 </script>
 
 <Post link="https://t.me/computly/188" />
@@ -51,9 +53,30 @@ import { Post } from 'sveltegram';
 | `colorDark`           | string  | `#89baff` | Accent color in dark mode                              |
 | `darkMode`            | boolean | `false`   | Enable dark mode                                       |
 
-## Comments widget
+## Discussions widget
 
-_**Coming soon...**_
+Embed a telegram discussions widget in your svelte application.
+
+### How to use
+
+```js
+<script>
+  import { Discussions } from 'sveltegram';
+</script>
+
+<Discussions link="https://t.me/contest/198" />
+```
+
+### API
+| Property              | Type    | Default   | Description                                                                       |
+| --------------------- | ------- | --------- | --------------------------------------------------------------------------------- |
+| `link` **(Required)** | string  |           | Telegram discussions link (_You can find it in context menu_)                     |
+| `color`               | string  | `#2f81f6` | Accent color                                                                      |
+| `colorDark`           | string  | `#89baff` | Accent color in dark mode                                                         |
+| `darkMode`            | boolean | `false`   | Enable dark mode                                                                  |
+| `colorfulNames`       | boolean | `false`   | Use different color for usernames                                                 |
+| `commentsLimit`       | number  | `5`       | Number of comments to show                                                        |
+| `height`              | number  |           | Height of the widget, The default value is 'auto' which is determined by Telegram |
 
 # Content Security Policy
 
