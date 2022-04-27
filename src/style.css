@@ -1,47 +1,112 @@
-.api>div {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 0.5rem;
+* {
+	transition: all 200ms ease-in-out;
+}
+
+body {
+	--svg-bg-grd-clr: #cccccc;
+	--bg-clr: hsla(0, 0%, 100%, 0.8);
+	--primary-clr: hsl(0, 0%, 10%);
+
+	--tbl-head-bg-clr: hsla(0, 0%, 100%, 0.2);
+	--tbl-odd-bg-clr: hsl(150 70% 80% / 0.1);
+	--tbl-even-bg-clr: hsl(40 100% 80% / 0.1);
+	--tbl-row-hov-clr: hsl(100 100% 80% / 0.5);
+	--prop-clr: hsl(210 100% 30%);
+	--desc-clr: hsl(0 0% 30%);
+}
+
+body.dark {
+	--svg-bg-grd-clr: #333333;
+	--bg-clr: hsla(0, 0%, 0%, 0.8);
+	--primary-clr: hsl(0, 0%, 90%);
+
+	--tbl-head-bg-clr: hsl(0 100% 0% / 0.2);
+	--tbl-odd-bg-clr: hsl(150 70% 20% / 0.1);
+	--tbl-even-bg-clr: hsl(40 100% 20% / 0.1);
+	--tbl-row-hov-clr: hsl(100 100% 20% / 0.5);
+	--prop-clr: hsl(210 100% 70%);
+	--desc-clr: hsl(0 0% 70%);
+}
+
+.background-svg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
+	background-image: radial-gradient(
+			circle at 16% 83%,
+			rgba(148, 148, 148, 0.06) 0%,
+			rgba(148, 148, 148, 0.06) 50%,
+			rgba(63, 63, 63, 0.06) 50%,
+			rgba(63, 63, 63, 0.06) 100%
+		),
+		radial-gradient(
+			circle at 68% 87%,
+			rgba(66, 66, 66, 0.06) 0%,
+			rgba(66, 66, 66, 0.06) 50%,
+			rgba(105, 105, 105, 0.06) 50%,
+			rgba(105, 105, 105, 0.06) 100%
+		),
+		radial-gradient(
+			circle at 38% 50%,
+			rgba(123, 123, 123, 0.06) 0%,
+			rgba(123, 123, 123, 0.06) 50%,
+			rgba(172, 172, 172, 0.06) 50%,
+			rgba(172, 172, 172, 0.06) 100%
+		),
+		linear-gradient(90deg, var(--svg-bg-grd-clr), var(--svg-bg-grd-clr));
+}
+
+:is(h1, h2, h3) {
+	font-family: Lato, sans-serif;
+}
+
+.api > div {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	padding: 0.5rem;
 }
 
 .api .head {
-  font-weight: bold;
-  background-color: var(--tbl-head-bg-clr);
-  border-radius: 5px 5px 0 0;
+	font-weight: bold;
+	background-color: var(--tbl-head-bg-clr);
+	border-radius: 5px 5px 0 0;
 }
 
 .api .row:nth-child(even) {
-  background-color: var(--tbl-even-bg-clr);
+	background-color: var(--tbl-even-bg-clr);
 }
 
 .api .row:nth-child(odd) {
-  background-color: var(--tbl-odd-bg-clr);
+	background-color: var(--tbl-odd-bg-clr);
 }
 
 .api .row:hover {
-  background-color: var(--tbl-row-hov-clr);
+	background-color: var(--tbl-row-hov-clr);
 }
 
 .api .row:last-child {
-  border-radius: 0 0 5px 5px;
+	border-radius: 0 0 5px 5px;
 }
 
 .api .row span:first-child {
-  font-family: 'Courier New', Courier, monospace;
-  color: var(--prop-clr);
+	font-family: 'Courier New', Courier, monospace;
+	color: var(--prop-clr);
 }
 
 .api .row span:first-child strong {
-  font-family: inherit;
-  color: var(--primary-clr);
+	font-family: inherit;
+	color: var(--primary-clr);
 }
 
 .api .row span:nth-child(3) {
-  color: var(--desc-clr);
-  font-family: 'Courier New', Courier, monospace;
+	color: var(--desc-clr);
+	font-family: 'Courier New', Courier, monospace;
 }
 
 .api .row span:last-child {
-  grid-area: 2/1/3/4;
-  color: var(--desc-clr);
+	grid-area: 2/1/3/4;
+	color: var(--desc-clr);
 }
