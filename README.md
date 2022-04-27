@@ -28,7 +28,8 @@ This package allows you to embed telegram widgets in your svelte web application
     - [How to use](#how-to-use-1)
     - [API](#api-1)
 - [Content Security Policy](#content-security-policy)
-  - [License](#license)
+- [Limitations](#limitations)
+- [License](#license)
 
 ## Post widget
 
@@ -88,6 +89,9 @@ script-src https://telegram.org;
 frame-src https://t.me;
 ```
 
-## License
+# Limitations
+- Can't use the same widget more than once due to telegram script assigning a unique id to each widget.
+
+# License
 
 [MIT](./LICENSE)
