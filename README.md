@@ -80,11 +80,11 @@ Embed a telegram discussions widget in your svelte application.
 
 # Content Security Policy
 
-If you are using CSP, you'll need to allow scripts and iFrames coming from `Telegram` as follows:
+If you are using CSP, you'll need to allow scripts and iFrames coming from Telegram domains as follows:
 
 ```js
 script-src https://telegram.org;
-frame-src https://telegram.org;
+frame-src https://t.me;
 ```
 
 ## License
