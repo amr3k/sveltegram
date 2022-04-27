@@ -1,25 +1,18 @@
 <script>
-	import { prefetchRoutes } from '$app/navigation';
 	import { theme } from '../store/theme';
 	import '../style.css';
 	import Header from '../Components/Header.svelte';
-	import Navigation from '../Components/Navigation.svelte';
-	import { onMount } from 'svelte';
 
 	if ($theme === null) {
 		const prefersDark =
 			window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 		theme.set(prefersDark ? 'dark' : 'light');
 	}
-	onMount(() => {
-		prefetchRoutes();
-	});
 </script>
 
 <div class="background-svg" />
 <main>
 	<Header />
-	<Navigation />
 	<slot />
 </main>
 
