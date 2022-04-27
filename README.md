@@ -68,6 +68,7 @@ Embed a telegram discussions widget in your svelte application.
 ```
 
 ### API
+
 | Property              | Type    | Default   | Description                                                                       |
 | --------------------- | ------- | --------- | --------------------------------------------------------------------------------- |
 | `link` **(Required)** | string  |           | Telegram discussions link (_You can find it in context menu_)                     |

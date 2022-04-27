@@ -10,9 +10,7 @@
 		<span>link <strong>(required)</strong></span>
 		<span>string</span>
 		<span />
-		<span
-			><strong>Description: </strong>Telegram post link. You can copy it from context menu</span
-		>
+		<span><strong>Description: </strong>Telegram post link. You can copy it from context menu</span>
 	</div>
 	<div class="row">
 		<span>darkMode</span>
