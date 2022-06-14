@@ -27,6 +27,7 @@ This package allows you to embed telegram widgets in your svelte web application
   - [Discussions widget](#discussions-widget)
     - [How to use](#how-to-use-1)
     - [API](#api-1)
+- [TODO](#todo)
 - [Content Security Policy](#content-security-policy)
 - [Limitations](#limitations)
 - [License](#license)
@@ -79,6 +80,10 @@ Embed a telegram discussions widget in your svelte application.
 | `colorfulNames`       | boolean | `false`   | Use different color for usernames                                                 |
 | `commentsLimit`       | number  | `5`       | Number of comments to show                                                        |
 | `height`              | number  |           | Height of the widget, The default value is 'auto' which is determined by Telegram |
+
+
+# TODO
+- Add support for [login widget](https://core.telegram.org/widgets/login)
 
 # Content Security Policy
 
