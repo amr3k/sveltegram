@@ -27,9 +27,11 @@ This package allows you to embed telegram widgets in your svelte web application
   - [Discussions widget](#discussions-widget)
     - [How to use](#how-to-use-1)
     - [API](#api-1)
-- [TODO](#todo)
 - [Content Security Policy](#content-security-policy)
 - [Limitations](#limitations)
+- [Development](#development)
+  - [Install](#install)
+- [TODO](#todo)
 - [License](#license)
 
 ## Post widget
@@ -81,10 +83,6 @@ Embed a telegram discussions widget in your svelte application.
 | `commentsLimit`       | number  | `5`       | Number of comments to show                                                        |
 | `height`              | number  |           | Height of the widget, The default value is 'auto' which is determined by Telegram |
 
-
-# TODO
-- Add support for [login widget](https://core.telegram.org/widgets/login)
-
 # Content Security Policy
 
 If you are using CSP, you'll need to allow scripts and iFrames coming from Telegram domains as follows:
@@ -96,6 +94,23 @@ frame-src https://t.me;
 
 # Limitations
 - Can't use the same widget more than once due to telegram script assigning a unique id to each widget.
+
+# Development
+
+## Install
+
+```sh
+git clone https://github.com/416d72/sveltegram.git
+cd sveltegram
+```
+Then install dependencies:
+
+```sh
+pnpm install
+```
+
+# TODO
+- Add support for [login widget](https://core.telegram.org/widgets/login)
 
 # License
 
