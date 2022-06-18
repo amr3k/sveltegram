@@ -110,7 +110,7 @@ pnpm install
 ```
 
 # TODO
-- Add support for [login widget](https://core.telegram.org/widgets/login)
+- [x] Add support for [login widget](https://core.telegram.org/widgets/login)
 
 # License
 
