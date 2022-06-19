@@ -27,6 +27,9 @@ This package allows you to embed telegram widgets in your svelte web application
   - [Discussions widget](#discussions-widget)
     - [How to use](#how-to-use-1)
     - [API](#api-1)
+  - [Login widget](#login-widget)
+    - [How to use](#how-to-use-2)
+    - [API](#api-2)
 - [Content Security Policy](#content-security-policy)
 - [Limitations](#limitations)
 - [Development](#development)
@@ -82,6 +85,32 @@ Embed a telegram discussions widget in your svelte application.
 | `colorfulNames`       | boolean | `false`   | Use different color for usernames                                                 |
 | `commentsLimit`       | number  | `5`       | Number of comments to show                                                        |
 | `height`              | number  |           | Height of the widget, The default value is 'auto' which is determined by Telegram |
+
+
+## Login widget
+
+Embed a telegram login button in your svelte application.
+
+### How to use
+
+```js
+<script>
+  import { Login } from 'sveltegram';
+</script>
+
+<Login username="ComputlyBot" />
+```
+
+### API
+
+| Property                                            | Type    | Default    | Description                                                                        |
+| --------------------------------------------------- | ------- | ---------- | ---------------------------------------------------------------------------------- |
+| `username` **(Required)**                           | string  |            | Your telegram bot username                                                         |
+| `authType`                                          | string  | `callback` | How to authenticate users? Choices are [callback, redirect]                        |
+| `redirectURL` **Required if `authType = redirect`** | string  |            | In case you chose redirect as an authentication method, you must set this property |
+| `requestAccess`                                     | boolean | `false`    | Whether you want to send messages to the user in the future                        |
+| `size`                                              | string  | `medium`   | Login button size. choices are [small, medium,large]                               |
+| `buttonRadius`                                      | number  | `10`       | Login button radius (in pixels)                                                    |
 
 # Content Security Policy
 

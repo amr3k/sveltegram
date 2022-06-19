@@ -35,16 +35,6 @@
 	// Login variables
 	/** @type {string}*/
 	let loginUsername = 'ComputlyBot';
-	/** @type {string}*/
-	let loginSize = 'medium';
-	/** @type {string}*/
-	let loginAuthType = 'callback';
-	/** @type {string}*/
-	let loginRedirectURL = 'https://sveltegram.computly.me';
-	/** @type {boolean}*/
-	let loginRequestAccess = false;
-	/** @type {number}*/
-	let loginButtonRadius = 10;
 
 	const telegramLogin = async (data) => {
 		/** @type {import('../lib/types/user').user}*/
@@ -140,7 +130,7 @@
 			>colorfulNames=<code class="token builtin">&lbrace;{disColorfulNames}&rbrace;</code></code
 		>{/if}
   <code class="token attr-name"
-		>commentsLimit=<code class="token attr-builtin">&lbrace;{disCommentsLimit}&rbrace;</code></code
+		>commentsLimit=<code class="token builtin">&lbrace;{disCommentsLimit}&rbrace;</code></code
 	>{#if disHeight}<br />  <code class="token attr-name"
 			>height=<code class="token attr-builtin">&lbrace;{disHeight}&rbrace;</code></code
 		>{/if}
@@ -190,16 +180,9 @@
 <code class="token tag">&lt;/script&gt;</code>
 <!-- I love pain -->
 <code class="token tag">&lt;Login</code>
-  <code class="token attr-name">username=</code><code class="token string">"{loginUsername}"</code>
-  <code class="token attr-name">authType=</code><code class="token string">"{loginAuthType}"</code
-	>{#if loginAuthType === 'redirect'}<br />  <code class="token attr-name">redirectURL=</code><code
-			class="token string">"{loginRedirectURL}"</code
-		>{/if}{#if loginRequestAccess === true}<br />  <code class="token attr-name"
-			>requestAccess=</code
-		><code class="token string">"{loginRequestAccess}"</code>{/if}
-  <code class="token attr-name">size=<code class="token attr-builtin">"{loginSize}"</code></code><br
-	/>  <code class="token attr-name"
-		>buttonRadius=<code class="token attr-builtin">&lbrace;{loginButtonRadius}&rbrace;</code></code
+  <code class="token attr-name">username=</code><code class="token string">"{loginUsername}"</code
+	><br />  <code class="token attr-name">requestAccess=</code><code class="token string"
+		>&lbrace;<code class="token builtin class-name">true</code>&rbrace;</code
 	><br />  <code class="token keyword keyword">on:</code><code class="token string">auth=</code
 	>&lbrace;(<code class="token keyword keyword">data</code>) =&rsaquo; <code class="token tag"
 		>&lbrace;</code
@@ -210,15 +193,7 @@
 <h3>Demo</h3>
 
 <div class="widget">
-	<Login
-		username={loginUsername}
-		authType={loginAuthType}
-		redirectURL={loginRedirectURL}
-		requestAccess={loginRequestAccess}
-		size={loginSize}
-		buttonRadius={loginButtonRadius}
-		on:auth={telegramLogin}
-	/>
+	<Login username={loginUsername} requestAccess={true} on:auth={telegramLogin} />
 </div>
 <LoginApi />
 

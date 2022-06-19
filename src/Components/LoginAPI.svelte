@@ -2,7 +2,7 @@
 	<h3>API</h3>
 	<p>
 		Please refer to <a href="https://core.telegram.org/widgets/login" target="_blank"
-			>Telegram API</a
+			>Telegram documentation</a
 		> for more details.
 	</p>
 	<div class="head">

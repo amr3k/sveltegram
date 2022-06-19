@@ -1,5 +1,10 @@
 <div class="api">
 	<h3>API</h3>
+	<p>
+		Please refer to <a href="https://core.telegram.org/widgets/discussion" target="_blank"
+			>Telegram documentation</a
+		> for more details.
+	</p>
 	<div class="head">
 		<span>Property</span>
 		<span>Type</span>
