@@ -50,7 +50,7 @@
 
 	const dispatch = createEventDispatcher();
 
-	const telegramCallback = (user) => {
+	const telegramCallback = (/** @type {import('../lib/types/user').user}*/ user) => {
 		dispatch('auth', user);
 	};
 	const cleanStart = () => {
@@ -80,6 +80,7 @@
 	};
 
 	onMount(() => {
+		// @ts-ignore
 		window.telegramCallback = telegramCallback;
 		cleanStart();
 	});
@@ -90,5 +91,7 @@
 <style>
 	div {
 		width: 100%;
+		display: flex;
+		justify-content: center;
 	}
 </style>
