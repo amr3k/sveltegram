@@ -1,6 +1,5 @@
 <script>
 	import { onMount } from 'svelte';
-	import { slide } from 'svelte/transition';
 	import { theme } from '../store/theme';
 	import Post from '$lib/Post.svelte';
 	import PostAPI from '../Components/PostAPI.svelte';
@@ -75,7 +74,7 @@
 </script>
 
 <svelte:head>
-	<title>Home | Sveltegram</title>
+	<title>Sveltegram</title>
 </svelte:head>
 
 <h1>Installation</h1>
@@ -201,37 +200,14 @@
   <code class="token attr-name">size=<code class="token attr-builtin">"{loginSize}"</code></code><br
 	/>  <code class="token attr-name"
 		>buttonRadius=<code class="token attr-builtin">&lbrace;{loginButtonRadius}&rbrace;</code></code
-	>
+	><br />  <code class="token keyword keyword">on:</code><code class="token string">auth=</code
+	>&lbrace;(<code class="token keyword keyword">data</code>) =&rsaquo; <code class="token tag"
+		>&lbrace;</code
+	> console.log(<code class="token keyword keyword">data</code>.user.id); <code class="token tag"
+		>&rbrace;</code
+	>&rbrace;
 <code class="token tag">/&gt;</code></pre>
 <h3>Demo</h3>
-<div class="controls">
-	<label for="login-username">Bot username</label>
-	<input type="text" id="login-username" bind:value={loginUsername} />
-	<label for="login-auth-type">Authentication type</label>
-	<select bind:value={loginAuthType} id="login-auth-type">
-		<option value="callback">Callback</option>
-		<option value="redirect">Redirect</option>
-	</select>
-	{#if loginAuthType === 'redirect'}
-		<label for="login-redirect-url" transition:slide={{ duration: 50 }}>Redirect URL</label>
-		<input
-			type="text"
-			id="login-redirect-url"
-			bind:value={loginRedirectURL}
-			transition:slide={{ duration: 50 }}
-		/>
-	{/if}
-	<label for="login-size">Button size</label>
-	<select bind:value={loginSize} id="login-size">
-		<option value="small">Small</option>
-		<option value="medium">Medium</option>
-		<option value="large">Large</option>
-	</select>
-	<label for="login-request-access"> Request access </label>
-	<input type="checkbox" id="login-request-access" bind:checked={loginRequestAccess} />
-	<label for="login-btn-radius">Button radius</label>
-	<input type="number" id="login-btn-radius" min="0" bind:value={loginButtonRadius} />
-</div>
 
 <div class="widget">
 	<Login
