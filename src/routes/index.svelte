@@ -7,6 +7,7 @@
 	import DiscussionsApi from '../Components/DiscussionsAPI.svelte';
 	import Login from '$lib/Login.svelte';
 	import LoginApi from '../Components/LoginAPI.svelte';
+	import GithubCorner from './_GithubCorner.svelte';
 
 	// Post variables
 	/** @type {string}*/
@@ -66,7 +67,7 @@
 <svelte:head>
 	<title>Sveltegram</title>
 </svelte:head>
-
+<GithubCorner --fill-color={darkThemeCheckbox ? '#26a457' : '#151513'} />
 <h1>Installation</h1>
 <pre class="language-bash"><code class="token builtin class-name">npm</code><code
 		class="token function"> install </code><code class="token">sveltegram</code></pre>
