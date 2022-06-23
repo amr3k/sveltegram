@@ -18,6 +18,21 @@
 		<span><strong>Description: </strong>Telegram post link. You can copy it from context menu</span>
 	</div>
 	<div class="row">
+		<span>pageURL</span>
+		<span>string</span>
+		<span />
+		<span
+			><strong>Description: </strong>As shown in
+			<a href="https://core.telegram.org/widgets/discussion">Telegram docs</a>, you can load
+			comments dynamically if you have a channel that has discussions enabled and you post articles
+			to it, you can set the <code>link</code> parameter to your channel link like
+			<code>https://t.me/computly</code> and Telegram will automatically fetch the discussions
+			belonging to current article, you still need to pass current page full URL so the widget can
+			be reactive to things like theme changes, as well as setting canonical
+			<code>&lt;link&gt;</code> tag with current page URL.</span
+		>
+	</div>
+	<div class="row">
 		<span>darkMode</span>
 		<span>boolean</span>
 		<span>false</span>

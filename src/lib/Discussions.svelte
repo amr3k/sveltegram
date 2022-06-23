@@ -5,6 +5,9 @@
 	export let link;
 
 	/** @type {string}*/
+	export let pageURL = '';
+
+	/** @type {string}*/
 	export let color = '#2f81f6';
 
 	/** @type {string}*/
@@ -29,7 +32,7 @@
 	/** @type {string}*/
 	let iFrameSource;
 	$: {
-		iFrameSource = `${link}?embed=1&discussion=1&comments_limit=${commentsLimit}${
+		iFrameSource = `${link}?embed=1&discussion=1&page_url=${pageURL}&comments_limit=${commentsLimit}${
 			darkMode ? '&dark=1' : ''
 		}&color=${color.replace('#', '')}&dark_color=${colorDark.replace('#', '')}${
 			colorfulNames ? '&colorful=1' : ''

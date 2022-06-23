@@ -76,15 +76,16 @@ Embed a telegram discussions widget in your svelte application.
 
 ### API
 
-| Property              | Type    | Default   | Description                                                                       |
-| --------------------- | ------- | --------- | --------------------------------------------------------------------------------- |
-| `link` **(Required)** | string  |           | Telegram discussions link (_You can find it in context menu_)                     |
-| `color`               | string  | `#2f81f6` | Accent color                                                                      |
-| `colorDark`           | string  | `#89baff` | Accent color in dark mode                                                         |
-| `darkMode`            | boolean | `false`   | Enable dark mode                                                                  |
-| `colorfulNames`       | boolean | `false`   | Use different color for usernames                                                 |
-| `commentsLimit`       | number  | `5`       | Number of comments to show                                                        |
-| `height`              | number  |           | Height of the widget, The default value is 'auto' which is determined by Telegram |
+| Property              | Type    | Default   | Description                                                                                                                                                                                                             |
+| --------------------- | ------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `link` **(Required)** | string  |           | Telegram discussions link (_You can find it in context menu_)                                                                                                                                                           |
+| `pageURL`             | string  |           | If you want to auto load comments from your channel as explained in [Telegram documentation](https://core.telegram.org/widgets/discussion) You'll need to pass the same page URL as the one in `<link rel="canonical">` |
+| `color`               | string  | `#2f81f6` | Accent color                                                                                                                                                                                                            |
+| `colorDark`           | string  | `#89baff` | Accent color in dark mode                                                                                                                                                                                               |
+| `darkMode`            | boolean | `false`   | Enable dark mode                                                                                                                                                                                                        |
+| `colorfulNames`       | boolean | `false`   | Use different color for usernames                                                                                                                                                                                       |
+| `commentsLimit`       | number  | `5`       | Number of comments to show                                                                                                                                                                                              |
+| `height`              | number  |           | Height of the widget, The default value is 'auto' which is determined by Telegram                                                                                                                                       |
 
 
 ## Login widget
