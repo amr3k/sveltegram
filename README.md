@@ -2,7 +2,12 @@
 
 This package allows you to embed telegram widgets in your svelte web application.
 
-## [Demo](https://sveltegram.computly.me)
+<div align="center">
+  <img src="./images/Sveltegram.png" width="256px">
+
+## [Demo & Documentation](https://sveltegram.computly.me)
+</div>
+
 
 ## Stats
 
@@ -19,7 +24,7 @@ This package allows you to embed telegram widgets in your svelte web application
 [![Hits-of-Code](https://hitsofcode.com/github/416d72/sveltegram?branch=main)](https://hitsofcode.com/github/416d72/sveltegram/view?branch=main)
 
 - [Sveltegram](#sveltegram)
-  - [Demo](#demo)
+  - [Demo & Documentation](#demo--documentation)
   - [Stats](#stats)
   - [Post widget](#post-widget)
     - [How to use](#how-to-use)
