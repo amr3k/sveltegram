@@ -12,16 +12,16 @@ This package allows you to embed telegram widgets in your svelte web application
 ## Stats
 
 [![Demo](https://img.shields.io/website?label=Demo&url=https%3A%2F%2Fsveltegram.a3k.me)](https://sveltegram.a3k.me)
-![GitHub branch checks state](https://img.shields.io/github/checks-status/416d72/sveltegram/main)
+![GitHub branch checks state](https://img.shields.io/github/checks-status/amr3k/sveltegram/main)
 ![npms.io (final)](https://img.shields.io/npms-io/final-score/sveltegram?color=%23538c99)
 
 <!-- ![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/npm/sveltegram) -->
 <!-- ![npm](https://img.shields.io/npm/dw/sveltegram) -->
 
-![LICENSE](https://img.shields.io/github/license/416d72/sveltegram?style=flat&color=fcdaff)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/416d72/sveltegram?color=fffc35&label=Repo%20size)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/416d72/sveltegram?color=8e4700)
-[![Hits-of-Code](https://hitsofcode.com/github/416d72/sveltegram?branch=main)](https://hitsofcode.com/github/416d72/sveltegram/view?branch=main)
+![LICENSE](https://img.shields.io/github/license/amr3k/sveltegram?style=flat&color=fcdaff)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/amr3k/sveltegram?color=fffc35&label=Repo%20size)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/amr3k/sveltegram?color=8e4700)
+[![Hits-of-Code](https://hitsofcode.com/github/amr3k/sveltegram?branch=main)](https://hitsofcode.com/github/amr3k/sveltegram/view?branch=main)
 
 - [Sveltegram](#sveltegram)
   - [Demo & Documentation](#demo--documentation)
@@ -135,7 +135,7 @@ frame-src https://t.me;
 ## Install
 
 ```sh
-git clone https://github.com/416d72/sveltegram.git
+git clone https://github.com/amr3k/sveltegram.git
 cd sveltegram
 ```
 Then install dependencies:

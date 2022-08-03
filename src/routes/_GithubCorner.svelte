@@ -1,5 +1,5 @@
 <a
-	href="https://github.com/416d72/sveltegram"
+	href="https://github.com/amr3k/sveltegram"
 	class="github-corner"
 	aria-label="View source on GitHub"
 	target="_blank"
