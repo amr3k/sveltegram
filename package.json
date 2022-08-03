@@ -30,7 +30,7 @@
 		"vite": "^3.0.0"
 	},
 	"type": "module",
-	"author": "Amr <amr@computly.me> (http://portfolio.computly.me/)",
+	"author": "Amr <amr@a3k.me> (http://a3k.me/)",
 	"keywords": [
 		"svelte",
 		"sveltekit",
@@ -41,7 +41,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/416d72/sveltegram"
+		"url": "https://github.com/amr3k/sveltegram"
 	},
-	"homepage": "https://sveltegram.computly.me"
+	"homepage": "https://sveltegram.a3k.me"
 }
