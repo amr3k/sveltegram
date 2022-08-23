@@ -1,6 +1,6 @@
 <script>
-	import { theme } from '../store/theme';
 	import '../style.css';
+	import { theme } from '../store/theme';
 	import Header from '../Components/Header.svelte';
 
 	if ($theme === null) {
