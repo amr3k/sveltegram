@@ -6,8 +6,8 @@ This package allows you to embed telegram widgets in your svelte web application
   <img src="./images/Sveltegram.png" width="256px">
 
 ## [Demo & Documentation](https://sveltegram.a3k.me)
-</div>
 
+</div>
 
 ## Stats
 
@@ -92,7 +92,6 @@ Embed a telegram discussions widget in your svelte application.
 | `commentsLimit`       | number  | `5`       | Number of comments to show                                                                                                                                                                                              |
 | `height`              | number  |           | Height of the widget, The default value is 'auto' which is determined by Telegram                                                                                                                                       |
 
-
 ## Login widget
 
 Embed a telegram login button in your svelte application.
@@ -128,6 +127,7 @@ frame-src https://t.me;
 ```
 
 # Limitations
+
 - Can't use the same widget more than once due to telegram script assigning a unique id to each widget.
 
 # Development
@@ -138,6 +138,7 @@ frame-src https://t.me;
 git clone https://github.com/amr3k/sveltegram.git
 cd sveltegram
 ```
+
 Then install dependencies:
 
 ```sh
@@ -145,6 +146,7 @@ pnpm install
 ```
 
 # TODO
+
 - [x] Add support for [login widget](https://core.telegram.org/widgets/login)
 
 # License
