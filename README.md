@@ -2,14 +2,14 @@
 
 This package allows you to embed telegram widgets in your svelte web application.
 
+Library size is **96 bytes** (min+gzipped). _[bundlephobia](https://bundlephobia.com/package/sveltegram@1.1.3)_
+
 <div align="center">
   <img src="./images/Sveltegram.png" width="256px">
 
 ## [Demo & Documentation](https://sveltegram.a3k.me)
 
 </div>
-
-## Stats
 
 [![Demo](https://img.shields.io/website?label=Demo&url=https%3A%2F%2Fsveltegram.a3k.me)](https://sveltegram.a3k.me)
 ![GitHub branch checks state](https://img.shields.io/github/checks-status/amr3k/sveltegram/main)
@@ -24,8 +24,7 @@ This package allows you to embed telegram widgets in your svelte web application
 [![Hits-of-Code](https://hitsofcode.com/github/amr3k/sveltegram?branch=main)](https://hitsofcode.com/github/amr3k/sveltegram/view?branch=main)
 
 - [Sveltegram](#sveltegram)
-  - [Demo & Documentation](#demo--documentation)
-  - [Stats](#stats)
+  - [Demo \& Documentation](#demo--documentation)
   - [Post widget](#post-widget)
     - [How to use](#how-to-use)
     - [API](#api)
