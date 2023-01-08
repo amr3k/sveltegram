@@ -13,14 +13,14 @@ Library size is **96 bytes** (min+gzipped). _[bundlephobia](https://bundlephobia
 
 [![Demo](https://img.shields.io/website?label=Demo&url=https%3A%2F%2Fsveltegram.a3k.me)](https://sveltegram.a3k.me)
 ![GitHub branch checks state](https://img.shields.io/github/checks-status/amr3k/sveltegram/main)
-![npms.io (final)](https://img.shields.io/npms-io/final-score/sveltegram?color=%23538c99)
+[![Rate this package](https://badges.openbase.com/js/rating/sveltegram.svg?token=2HClQ+1c8RGTv7bSzxuDGJUEVaixuhKGcafO5McxW4A=)](https://openbase.com/js/sveltegram?utm_source=embedded&amp;utm_medium=badge&amp;utm_campaign=rate-badge)
 
 <!-- ![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/npm/sveltegram) -->
 <!-- ![npm](https://img.shields.io/npm/dw/sveltegram) -->
+<!-- ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/amr3k/sveltegram?color=8e4700) -->
 
 ![LICENSE](https://img.shields.io/github/license/amr3k/sveltegram?style=flat&color=fcdaff)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/amr3k/sveltegram?color=fffc35&label=Repo%20size)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/amr3k/sveltegram?color=8e4700)
 [![Hits-of-Code](https://hitsofcode.com/github/amr3k/sveltegram?branch=main)](https://hitsofcode.com/github/amr3k/sveltegram/view?branch=main)
 
 - [Sveltegram](#sveltegram)
