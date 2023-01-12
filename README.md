@@ -2,7 +2,7 @@
 
 This package allows you to embed telegram widgets in your svelte web application.
 
-Library size is **96 bytes** (min+gzipped). _[bundlephobia](https://bundlephobia.com/package/sveltegram@1.1.3)_
+Library size is **96 bytes** (min+gzipped). _[bundlephobia](https://bundlephobia.com/package/sveltegram@1.1.4)_
 
 <div align="center">
   <img src="./images/Sveltegram.png" width="256px">
