@@ -75,7 +75,7 @@
 <h2>Telegram post</h2>
 <div class="snippet">
 	<h3>Code</h3>
-	<pre class="language-js  code-demo"><code class="token tag">&lt;script&gt;</code>
+	<pre class="language-js code-demo"><code class="token tag">&lt;script&gt;</code>
   <code class="token keyword keyword">import</code> <code class="token function"
 			>&lbrace; Post &rbrace;</code
 		> <code class="token keyword">from</code> <code class="token string">'sveltegram';</code>
