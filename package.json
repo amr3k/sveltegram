@@ -1,7 +1,7 @@
 {
 	"name": "sveltegram",
 	"description": "Reactive Telegram widgets built with svelte",
-	"version": "1.1.5",
+	"version": "1.1.5-1",
 	"license": "MIT",
 	"scripts": {
 		"dev": "vite dev",
@@ -15,20 +15,20 @@
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "1.0.0",
-		"@sveltejs/kit": "1.0.11",
-		"@sveltejs/package": "1.0.2",
-		"dotenv": "^16.0.3",
-		"eslint": "^8.31.0",
-		"eslint-config-prettier": "^8.6.0",
-		"eslint-plugin-svelte3": "^4.0.0",
-		"prettier": "^2.8.2",
-		"prettier-plugin-svelte": "^2.9.0",
-		"svelte": "^3.55.1",
-		"svelte-check": "^3.0.2",
-		"svelte2tsx": "^0.6.0",
-		"typescript": "~4.9.4",
-		"vite": "^4.0.4"
+		"@sveltejs/adapter-auto": "2.1.0",
+		"@sveltejs/kit": "1.20.4",
+		"@sveltejs/package": "2.0.2",
+		"dotenv": "^16.3.1",
+		"eslint": "^8.43.0",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-plugin-svelte": "^2.31.0",
+		"prettier": "^2.8.8",
+		"prettier-plugin-svelte": "^2.10.1",
+		"svelte": "^4.0.0",
+		"svelte-check": "^3.4.4",
+		"svelte2tsx": "^0.6.16",
+		"typescript": "~5.1.3",
+		"vite": "^4.3.9"
 	},
 	"type": "module",
 	"author": "Amr <contact@a3k.me> (https://www.a3k.me/)",
