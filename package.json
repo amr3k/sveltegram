@@ -16,8 +16,8 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "2.1.0",
-		"@sveltejs/kit": "1.20.4",
-		"@sveltejs/package": "2.0.2",
+		"@sveltejs/kit": "1.20.5",
+		"@sveltejs/package": "2.1.0",
 		"dotenv": "^16.3.1",
 		"eslint": "^8.43.0",
 		"eslint-config-prettier": "^8.8.0",
