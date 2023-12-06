@@ -1,8 +1,8 @@
-import { error } from '@sveltejs/kit';
 import { BOT_WEBHOOK } from '$env/static/private';
+import { error } from '@sveltejs/kit';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
-export async function post({ request }) {
+export async function POST({ request }) {
 	const body = await request.json();
 	try {
 		const res = await fetch(`${BOT_WEBHOOK}/${body.id}`);

@@ -37,10 +37,10 @@
 	/** @type {string}*/
 	let loginUsername = 'ComputlyBot';
 
-	const telegramLogin = async (/** @type any*/ data) => {
+	async function telegramLogin(/** @type any*/ data) {
 		/** @type {import('../lib/types/user').user}*/
 		const user = data.detail;
-		const res = await fetch('/bot', {
+		const res = await fetch(window.location.origin + '/bot', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -50,14 +50,14 @@
 			})
 		});
 		console.log(await res.json());
-	};
+	}
 
-	const switchTheme = () => {
+	function switchTheme() {
 		theme.set(darkThemeCheckbox ? 'dark' : 'light');
 		darkThemeCheckbox
 			? document.body.classList.add('dark')
 			: document.body.classList.remove('dark');
-	};
+	}
 	onMount(() => {
 		darkThemeCheckbox = $theme === 'dark';
 		switchTheme();

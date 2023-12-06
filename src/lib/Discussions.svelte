@@ -43,7 +43,7 @@
 	/** @type {HTMLDivElement}*/
 	let div;
 
-	const cleanStart = () => {
+	function cleanStart() {
 		try {
 			div.innerHTML = '';
 			script = document.createElement('script');
@@ -63,9 +63,9 @@
 		} catch (e) {
 			console.error(e);
 		}
-	};
+	}
 
-	const iFrameStuff = () => {
+	function iFrameStuff() {
 		try {
 			const iframe = div.getElementsByTagName('iframe')[0];
 			if (iframe) {
@@ -74,7 +74,7 @@
 		} catch (e) {
 			// iFrame is not loaded yet
 		}
-	};
+	}
 
 	onMount(() => {
 		cleanStart();

@@ -50,10 +50,10 @@
 
 	const dispatch = createEventDispatcher();
 
-	const telegramCallback = (/** @type {import('../lib/types/user').user}*/ user) => {
+	function telegramCallback(/** @type {import('../lib/types/user').user}*/ user) {
 		dispatch('auth', user);
-	};
-	const cleanStart = () => {
+	}
+	function cleanStart() {
 		try {
 			div.innerHTML = '';
 			script = document.createElement('script');
@@ -77,7 +77,7 @@
 		} catch (e) {
 			console.error(e);
 		}
-	};
+	}
 
 	onMount(() => {
 		// @ts-ignore
