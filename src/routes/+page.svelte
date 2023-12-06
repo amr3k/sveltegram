@@ -1,12 +1,12 @@
 <script>
-	import { onMount } from 'svelte';
-	import { theme } from '../store/theme';
-	import Post from '$lib/Post.svelte';
-	import PostAPI from '../Components/PostAPI.svelte';
 	import Discussions from '$lib/Discussions.svelte';
-	import DiscussionsApi from '../Components/DiscussionsAPI.svelte';
 	import Login from '$lib/Login.svelte';
+	import Post from '$lib/Post.svelte';
+	import { onMount } from 'svelte';
+	import DiscussionsApi from '../Components/DiscussionsAPI.svelte';
 	import LoginApi from '../Components/LoginAPI.svelte';
+	import PostAPI from '../Components/PostAPI.svelte';
+	import { theme } from '../store/theme';
 	import GithubCorner from './_GithubCorner.svelte';
 
 	// Post variables
@@ -37,7 +37,7 @@
 	/** @type {string}*/
 	let loginUsername = 'ComputlyBot';
 
-	const telegramLogin = async (data) => {
+	const telegramLogin = async (/** @type any*/ data) => {
 		/** @type {import('../lib/types/user').user}*/
 		const user = data.detail;
 		const res = await fetch('/bot', {
