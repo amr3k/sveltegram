@@ -1,7 +1,7 @@
 {
 	"name": "sveltegram",
 	"description": "Reactive Telegram widgets built with svelte",
-	"version": "1.1.9",
+	"version": "1.1.10",
 	"license": "MIT",
 	"scripts": {
 		"dev": "vite dev",
@@ -17,6 +17,7 @@
 		"@sveltejs/adapter-auto": "3.1.1",
 		"@sveltejs/kit": "2.5.0",
 		"@sveltejs/package": "2.2.6",
+		"@sveltejs/vite-plugin-svelte": "^3.0.2",
 		"dotenv": "^16.4.5",
 		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^9.1.0",
