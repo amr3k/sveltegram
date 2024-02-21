@@ -10,8 +10,8 @@
 		"package": "svelte-kit sync && svelte-package && publint",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
-		"format": "prettier --ignore-path .gitignore --check --write --plugin-search-dir=. .",
-		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore ."
+		"format": "prettier --ignore-path .gitignore --check --write .",
+		"lint": "prettier --ignore-path .gitignore --check . && eslint --ignore-path .gitignore ."
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "3.1.1",
