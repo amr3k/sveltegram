@@ -1,67 +1,68 @@
 {
-  "name": "sveltegram",
-  "description": "Reactive Telegram widgets built with svelte",
-  "version": "1.1.8",
-  "license": "MIT",
-  "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "preview": "vite preview",
-    "package": "svelte-kit sync && svelte-package && publint",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
-    "lint": "prettier --ignore-path .gitignore --check --write --plugin-search-dir=. . && eslint --ignore-path .gitignore ."
-  },
-  "devDependencies": {
-    "@sveltejs/adapter-auto": "3.1.1",
-    "@sveltejs/kit": "2.5.0",
-    "@sveltejs/package": "2.2.6",
-    "dotenv": "^16.4.5",
-    "eslint": "^8.56.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-svelte": "^2.35.1",
-    "prettier": "^3.2.5",
-    "prettier-plugin-svelte": "^3.2.1",
-    "publint": "^0.2.7",
-    "svelte": "4.2.11",
-    "svelte-check": "^3.6.4",
-    "tslib": "^2.6.2",
-    "typescript": "~5.3.3",
-    "vite": "^5.1.4"
-  },
-  "type": "module",
-  "author": "Amr <contact@a3k.me> (https://www.a3k.me/)",
-  "keywords": [
-    "svelte",
-    "sveltekit",
-    "telegram",
-    "post",
-    "comments",
-    "discussion",
-    "login",
-    "auth",
-    "widget",
-    "embed"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/amr3k/sveltegram"
-  },
-  "homepage": "https://sveltegram.a3k.me",
-  "peerDependencies": {
-    "svelte": "4.2.11"
-  },
-  "files": [
-    "dist",
-    "!dist/**/*.test.*",
-    "!dist/**/*.spec.*"
-  ],
-  "exports": {
-    ".": {
-      "svelte": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
-  "svelte": "./dist/index.js",
-  "types": "./dist/index.d.ts"
+	"name": "sveltegram",
+	"description": "Reactive Telegram widgets built with svelte",
+	"version": "1.1.8",
+	"license": "MIT",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"package": "svelte-kit sync && svelte-package && publint",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
+		"format": "prettier --ignore-path .gitignore --check --write --plugin-search-dir=. .",
+		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore ."
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "3.1.1",
+		"@sveltejs/kit": "2.5.0",
+		"@sveltejs/package": "2.2.6",
+		"dotenv": "^16.4.5",
+		"eslint": "^8.56.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-svelte": "^2.35.1",
+		"prettier": "^3.2.5",
+		"prettier-plugin-svelte": "^3.2.1",
+		"publint": "^0.2.7",
+		"svelte": "4.2.11",
+		"svelte-check": "^3.6.4",
+		"tslib": "^2.6.2",
+		"typescript": "~5.3.3",
+		"vite": "^5.1.4"
+	},
+	"type": "module",
+	"author": "Amr <contact@a3k.me> (https://www.a3k.me/)",
+	"keywords": [
+		"svelte",
+		"sveltekit",
+		"telegram",
+		"post",
+		"comments",
+		"discussion",
+		"login",
+		"auth",
+		"widget",
+		"embed"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/amr3k/sveltegram"
+	},
+	"homepage": "https://sveltegram.a3k.me",
+	"peerDependencies": {
+		"svelte": "4.2.11"
+	},
+	"files": [
+		"dist",
+		"!dist/**/*.test.*",
+		"!dist/**/*.spec.*"
+	],
+	"exports": {
+		".": {
+			"svelte": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		}
+	},
+	"svelte": "./dist/index.js",
+	"types": "./dist/index.d.ts"
 }
