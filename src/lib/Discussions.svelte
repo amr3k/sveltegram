@@ -1,6 +1,4 @@
 <script>
-	import { onMount } from 'svelte';
-
 	/**
 	 * @type {{
 	 * link: string;
@@ -79,7 +77,7 @@
 		}
 	}
 
-	onMount(() => {
+	$effect(() => {
 		cleanStart();
 		iFrameStuff();
 	});
