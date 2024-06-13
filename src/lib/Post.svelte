@@ -11,8 +11,8 @@
 
 	/** @type {HTMLDivElement | undefined}*/
 	let div = $state();
-	/** @type {HTMLScriptElement}*/
-	let script;
+	/** @type {HTMLScriptElement | undefined}*/
+	let script = $state();
 	let telegramPost = $derived(link.replace('https://t.me/', ''));
 
 	/** @type {string}*/
