@@ -3,7 +3,7 @@
 This package allows you to embed telegram widgets in your svelte web application.
 
 <div align="center">
-  <img src="./images/Sveltegram.png" width="256px">
+  <img src="./images/Logo.svg" width="256px">
 
 ## [Demo & Documentation](https://sveltegram.a3k.me)
 
@@ -11,7 +11,6 @@ This package allows you to embed telegram widgets in your svelte web application
 
 [![Demo](https://img.shields.io/website?label=Demo&url=https%3A%2F%2Fsveltegram.a3k.me)](https://sveltegram.a3k.me)
 ![GitHub branch checks state](https://img.shields.io/github/checks-status/amr3k/sveltegram/main)
-[![Rate this package](https://badges.openbase.com/js/rating/sveltegram.svg?token=2HClQ+1c8RGTv7bSzxuDGJUEVaixuhKGcafO5McxW4A=)](https://openbase.com/js/sveltegram?utm_source=embedded&utm_medium=badge&utm_campaign=rate-badge)
 
 <!-- ![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/npm/sveltegram) -->
 <!-- ![npm](https://img.shields.io/npm/dw/sveltegram) -->
