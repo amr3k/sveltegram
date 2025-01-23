@@ -1,8 +1,10 @@
 <script>
+	import { onMount } from "svelte";
+
 	/**
 	 * @type {{
 	 * link: string;
-	 * pageURL: string;
+	 * pageURL?: string;
 	 * color: string;
 	 * colorDark: string;
 	 * colorfulNames: boolean;
@@ -13,7 +15,7 @@
 	 */
 	let {
 		link,
-		pageURL,
+		pageURL = '',
 		color = '#2f81f6',
 		colorDark = '#89baff',
 		colorfulNames = false,
@@ -77,7 +79,7 @@
 		}
 	}
 
-	$effect(() => {
+	onMount(() => {
 		cleanStart();
 		iFrameStuff();
 	});

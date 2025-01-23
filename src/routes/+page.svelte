@@ -21,25 +21,23 @@
 
 	// Discussions variables
 	/** @type {string}*/
-	let disLink = $state('https://t.me/contest/198');
+	let discussionLink = $state('https://t.me/contest/198');
 	/** @type {string}*/
-	let disColor = $state('#2f81f6');
+	let discussionColor = $state('#2f81f6');
 	/** @type {string}*/
-	let disColorDark = $state('#89baff');
+	let discussionColorDark = $state('#89baff');
 	/** @type {boolean}*/
-	let disColorfulNames = $state(false);
+	let discussionColorfulNames = $state(false);
 	/** @type {number}*/
-	let disCommentsLimit = $state(5);
+	let discussionCommentsLimit = $state(5);
 	/** @type {number|undefined}*/
-	let disHeight = $state();
+	let discussionHeight = $state();
 
 	// Login variables
 	/** @type {string}*/
 	let loginUsername = 'ComputlyBot';
 
-	async function telegramLogin(/** @type any*/ data) {
-		/** @type {import('../lib/types/user').user}*/
-		const user = data.detail;
+	async function telegramLogin(/** @type {import('../lib/types/user').user}*/ user) {
 		const res = await fetch(window.location.origin + '/bot', {
 			method: 'POST',
 			headers: {
@@ -121,25 +119,28 @@
 <code class="token tag">&lt;/script&gt;</code>
 <!-- I love pain -->
 <code class="token tag">&lt;Discussions</code>
-  <code class="token attr-name">link=</code><code class="token string">"{disLink}"</code
+  <code class="token attr-name">link=</code><code class="token string">"{discussionLink}"</code
 	>{#if $theme === 'dark'}<br />  <code class="token attr-name">darkMode=</code><code
 			class="token builtin">&lbrace;true&rbrace;</code
 		>{/if}
-  <code class="token attr-name">color=</code><code class="token string">"{disColor}"</code>
-  <code class="token attr-name">colorDark=</code><code class="token string">"{disColorDark}"</code
-	>{#if disColorfulNames}<br />  <code class="token attr-name"
-			>colorfulNames=<code class="token builtin">&lbrace;{disColorfulNames}&rbrace;</code></code
+  <code class="token attr-name">color=</code><code class="token string">"{discussionColor}"</code>
+  <code class="token attr-name">colorDark=</code><code class="token string"
+		>"{discussionColorDark}"</code
+	>{#if discussionColorfulNames}<br />  <code class="token attr-name"
+			>colorfulNames=<code class="token builtin">&lbrace;{discussionColorfulNames}&rbrace;</code
+			></code
 		>{/if}
   <code class="token attr-name"
-		>commentsLimit=<code class="token builtin">&lbrace;{disCommentsLimit}&rbrace;</code></code
-	>{#if disHeight}<br />  <code class="token attr-name"
-			>height=<code class="token attr-builtin">&lbrace;{disHeight}&rbrace;</code></code
+		>commentsLimit=<code class="token builtin">&lbrace;{discussionCommentsLimit}&rbrace;</code
+		></code
+	>{#if discussionHeight}<br />  <code class="token attr-name"
+			>height=<code class="token attr-builtin">&lbrace;{discussionHeight}&rbrace;</code></code
 		>{/if}
 <code class="token tag">/&gt;</code></pre>
 <h3>Demo</h3>
 <div class="controls">
 	<label for="dis-link">Link</label>
-	<input type="text" id="dis-link" bind:value={disLink} />
+	<input type="text" id="dis-link" bind:value={discussionLink} />
 	<label for="post-dark-switch"> Dark mode </label>
 	<input
 		type="checkbox"
@@ -148,26 +149,31 @@
 		onchange={switchTheme}
 	/>
 	<label for="dis-color"> Accent color </label>
-	<input type="color" id="dis-color" bind:value={disColor} title={disColor} />
+	<input type="color" id="dis-color" bind:value={discussionColor} title={discussionColor} />
 	<label for="dis-color2"> Accent color (Dark mode) </label>
-	<input type="color" id="dis-color2" bind:value={disColorDark} title={disColorDark} />
+	<input
+		type="color"
+		id="dis-color2"
+		bind:value={discussionColorDark}
+		title={discussionColorDark}
+	/>
 	<label for="dis-colorful"> Colorful names </label>
-	<input type="checkbox" id="dis-colorful" bind:checked={disColorfulNames} />
+	<input type="checkbox" id="dis-colorful" bind:checked={discussionColorfulNames} />
 	<label for="dis-comments-limit">Comments limit</label>
-	<input type="number" id="dis-comments-limit" min="1" bind:value={disCommentsLimit} />
+	<input type="number" id="dis-comments-limit" min="1" bind:value={discussionCommentsLimit} />
 	<label for="dis-height">Height</label>
-	<input type="number" id="dis-height" bind:value={disHeight} />
+	<input type="number" id="dis-height" bind:value={discussionHeight} />
 </div>
 
 <div class="widget">
 	<Discussions
-		link={disLink}
+		link={discussionLink}
 		darkMode={$theme === 'dark'}
-		color={disColor}
-		colorDark={disColorDark}
-		colorfulNames={disColorfulNames}
-		commentsLimit={disCommentsLimit}
-		height={disHeight}
+		color={discussionColor}
+		colorDark={discussionColorDark}
+		colorfulNames={discussionColorfulNames}
+		commentsLimit={discussionCommentsLimit}
+		height={discussionHeight}
 	/>
 </div>
 <DiscussionsApi />
@@ -194,7 +200,7 @@
 <h3>Demo</h3>
 
 <div class="widget">
-	<Login username={loginUsername} requestAccess={true} on:auth={telegramLogin} />
+	<Login username={loginUsername} requestAccess={true} onauth={telegramLogin} />
 </div>
 <LoginApi />
 
