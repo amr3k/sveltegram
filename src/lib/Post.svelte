@@ -53,6 +53,7 @@
 				const iframe = div.getElementsByTagName('iframe')[0];
 				if (iframe) {
 					iframe.src = iFrameSource;
+					iframe.title = 'Telegram post';
 				}
 			}
 		} catch (e) {
