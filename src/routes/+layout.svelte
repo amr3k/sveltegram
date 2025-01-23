@@ -34,7 +34,5 @@
 		background-color: var(--bg-clr);
 		color: var(--primary-clr);
 		box-shadow: 2px 5px 20px hsl(0 0% 20% / 0.3);
-		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode',
-			Geneva, Verdana, sans-serif;
 	}
 </style>

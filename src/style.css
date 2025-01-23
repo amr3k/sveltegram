@@ -13,6 +13,7 @@ body {
 	--tbl-row-hov-clr: hsl(100 100% 80% / 0.5);
 	--prop-clr: hsl(210 100% 30%);
 	--desc-clr: hsl(0 0% 30%);
+	--mono-font: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 	font-family: system-ui, sans-serif;
 }
 
@@ -81,7 +82,7 @@ body.dark {
 
 			&>span {
 				&:first-child {
-					font-family: 'Courier New', Courier, monospace;
+					font-family: var(--mono-font);
 					color: var(--prop-clr);
 
 					&>strong {
@@ -91,7 +92,7 @@ body.dark {
 
 				&:nth-child(3) {
 					color: var(--desc-clr);
-					font-family: 'Courier New', Courier, monospace;
+					font-family: var(--mono-font);
 				}
 
 				&:last-child {
