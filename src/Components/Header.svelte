@@ -17,7 +17,9 @@
 		color: transparent;
 		background-clip: text;
 		-webkit-background-clip: text;
-		font-family: Paytone One, sans-serif;
+		font-family:
+			Paytone One,
+			sans-serif;
 		font-size: 10vmin;
 	}
 	header :is(:global(h1, p)) {
