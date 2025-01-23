@@ -3,7 +3,7 @@ import { error, json } from '@sveltejs/kit';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export async function POST({ request }) {
-	/** @type {import('../../lib/types/user').user}*/
+	/** @type {import('$lib/types/user').User}*/
 	const body = await request.json();
 	try {
 		const message = [

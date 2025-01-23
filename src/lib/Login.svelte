@@ -14,7 +14,7 @@
 	 * } | {
 	 * authType?: 'callback'; // Authorization type, Callback means that you will get an event containing user info when the user is logged in, you'll need to use onauth to handle it. Redirect means that user will be redirected to the URL you specify in `redirectURL` parameter.
 	 * redirectURL?: never; // If authType is set to redirect, this is the URL that user will be redirected to after logging in.
-	 * onauth: (user: import('../lib/types/user').user) => void;
+	 * onauth: (user: import('../lib/types/user').User) => void;
 	 * })}
 	 */
 	let {
@@ -32,7 +32,7 @@
 	/** @type {HTMLScriptElement | undefined}*/
 	let script = $state();
 
-	function telegramCallback(/** @type {import('../lib/types/user').user}*/ user) {
+	function telegramCallback(/** @type {import('../lib/types/user').User}*/ user) {
 		onauth(user);
 	}
 	function cleanStart() {
@@ -64,11 +64,8 @@
 	}
 
 	onMount(() => {
+		window.telegramCallback = telegramCallback;
 		cleanStart();
-		if ('telegramCallback' in window) {
-			window.telegramCallback = telegramCallback;
-			console.log('telegramCallback is already defined');
-		}
 	});
 </script>
 

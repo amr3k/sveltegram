@@ -37,7 +37,7 @@
 	/** @type {string}*/
 	let loginUsername = 'ComputlyBot';
 
-	async function telegramLogin(/** @type {import('../lib/types/user').user}*/ user) {
+	async function telegramLogin(/** @type {import('$lib/types/user').User}*/ user) {
 		const res = await fetch(window.location.origin + '/bot', {
 			method: 'POST',
 			headers: {
