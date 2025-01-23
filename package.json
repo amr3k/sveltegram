@@ -10,8 +10,8 @@
 		"package": "svelte-kit sync && svelte-package && publint",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
-		"format": "prettier --ignore-path .gitignore --check --write .",
-		"lint": "prettier --ignore-path .gitignore --check --write . && eslint --ignore-pattern .gitignore ."
+		"format": "prettier --check --write .",
+		"lint": "eslint --ignore-pattern .gitignore ."
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.18.0",
