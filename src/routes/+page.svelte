@@ -77,7 +77,7 @@
 <div class="snippet">
 	<h3>Code</h3>
 	<pre class="language-js code-demo"><code class="token tag">&lt;script&gt;</code>
-  <code class="token keyword keyword">import</code> <code class="token function"
+  <code class="token keyword">import</code> <code class="token function"
 			>&lbrace; Post &rbrace;</code
 		> <code class="token keyword">from</code> <code class="token string">'sveltegram';</code>
 <code class="token tag">&lt;/script&gt;</code>
@@ -116,7 +116,7 @@
 <h2>Telegram discussion</h2>
 <h3>Code</h3>
 <pre class="language-js code-demo"><code class="token tag">&lt;script&gt;</code>
-  <code class="token keyword keyword">import</code> <code class="token function"
+  <code class="token keyword">import</code> <code class="token function"
 		>&lbrace; Discussions &rbrace;</code
 	> <code class="token keyword">from</code> <code class="token string">'sveltegram';</code>
 <code class="token tag">&lt;/script&gt;</code>
@@ -184,7 +184,7 @@
 <h2>Telegram login widget</h2>
 <h3>Code</h3>
 <pre class="language-js code-demo"><code class="token tag">&lt;script&gt;</code>
-  <code class="token keyword keyword">import</code> <code class="token function"
+  <code class="token keyword">import</code> <code class="token function"
 		>&lbrace; Login &rbrace;</code
 	> <code class="token keyword">from</code> <code class="token string">'sveltegram';</code>
 <code class="token tag">&lt;/script&gt;</code>
@@ -193,12 +193,11 @@
   <code class="token attr-name">username=</code><code class="token string">"{loginUsername}"</code
 	><br />  <code class="token attr-name">requestAccess=</code><code class="token string"
 		>&lbrace;<code class="token builtin class-name">true</code>&rbrace;</code
-	><br />  <code class="token keyword keyword">on:</code><code class="token string">auth=</code
-	>&lbrace;(<code class="token keyword keyword">data</code>) =&rsaquo; <code class="token tag"
-		>&lbrace;</code
-	> console.log(<code class="token keyword keyword">data</code>.user.id); <code class="token tag"
-		>&rbrace;</code
-	>&rbrace;
+	><br />  <code class="token attr-name">onauth=</code>&lbrace;(<code class="token keyword"
+		>data</code
+	>) =&rsaquo; <code class="token tag">&lbrace;</code> console.log("User ID:", <code
+		class="token keyword">data</code
+	>.id); <code class="token tag">&rbrace;</code>&rbrace;
 <code class="token tag">/&gt;</code></pre>
 <h3>Demo</h3>
 
@@ -208,6 +207,9 @@
 <LoginApi />
 
 <style>
+	h2 {
+		margin-block-start: 5rem;
+	}
 	.controls {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);

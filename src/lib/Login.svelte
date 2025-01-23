@@ -5,12 +5,17 @@
 	 * @type {{
 	 * username: string; // bot username
 	 * size?: 'small'| 'medium'| 'large'; // Widget size
-	 * authType?: 'callback' | 'redirect'; // Authorization type, Callback means that you will get an event containing user info when the user is logged in, you'll need to use on:auth to handle it. Redirect means that user will be redirected to the URL you specify in `redirectURL` parameter.
-	 * redirectURL?: string; // If authType is set to redirect, this is the URL that user will be redirected to after logging in.
 	 * requestAccess?: boolean; // If set to true, user will be asked to grant access to your bot, This is useful if you want your bot to be able to send messages to the user.
 	 * buttonRadius?: number; // Button radius in pixels.
+	 * } & ({
+	 * authType: 'redirect'; // Authorization type, Callback means that you will get an event containing user info when the user is logged in, you'll need to use onauth to handle it. Redirect means that user will be redirected to the URL you specify in `redirectURL` parameter.
+	 * redirectURL: string; // If authType is set to redirect, this is the URL that user will be redirected to after logging in.
+	 * onauth?: never;
+	 * } | {
+	 * authType?: 'callback'; // Authorization type, Callback means that you will get an event containing user info when the user is logged in, you'll need to use onauth to handle it. Redirect means that user will be redirected to the URL you specify in `redirectURL` parameter.
+	 * redirectURL?: never; // If authType is set to redirect, this is the URL that user will be redirected to after logging in.
 	 * onauth: (user: import('../lib/types/user').user) => void;
-	 * }}
+	 * })}
 	 */
 	let {
 		username,
@@ -19,7 +24,7 @@
 		redirectURL = undefined,
 		requestAccess = false,
 		buttonRadius = 10,
-		onauth
+		onauth = () => {}
 	} = $props();
 
 	/** @type {HTMLDivElement | undefined}*/

@@ -112,7 +112,7 @@ Embed a telegram login button in your svelte application.
 | `requestAccess`                                     | boolean  | `false`    | Whether you want to send messages to the user in the future                        |
 | `size`                                              | string   | `medium`   | Login button size. choices are [small, medium,large]                               |
 | `buttonRadius`                                      | number   | `10`       | Login button radius (in pixels)                                                    |
-| `onauth` **(Required)**                             | Function |            | Callback function responsible for handling successful authentication               |
+| `onauth` **(Required) if `authType = callback`**    | Function |            | Callback function responsible for handling successful authentication               |
 
 # Content Security Policy
 
@@ -143,17 +143,6 @@ pnpm install
 ```
 
 # TODO
-
-- [x] Add support for [login widget](https://core.telegram.org/widgets/login)
-- [ ] Use direct bot API call with the following data:
-
-  > `https://api.telegram.org/bot<BOT_TOKEN>/sendMessage`
-
-  > Body:
-
-  > `chat_id`: user_id
-
-  > `text`: message
 
 - [ ] Publish to [jsr.io](https://jsr.io)
 

@@ -24,7 +24,7 @@
 		<span>string</span>
 		<span>callback</span>
 		<span
-			><strong>Description: </strong>How to authenticate users? Choices are [callback, redirect]</span
+			><strong>Description: </strong>How to authenticate users? Choices are "callback" or "redirect"</span
 		>
 	</div>
 	<div class="row">

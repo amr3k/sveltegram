@@ -1,5 +1,6 @@
 <script>
 	import '../style.css';
+	import '../prism.css';
 	import { theme } from '../store/theme';
 	import Header from '../Components/Header.svelte';
 	/**
