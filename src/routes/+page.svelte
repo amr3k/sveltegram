@@ -218,22 +218,31 @@
 		align-items: center;
 		gap: 2ch;
 		margin-bottom: 1rem;
+
+		& input {
+			&[type='text'] {
+				padding: 0.5em 1em;
+				background-color: var(--bg-clr);
+				color: var(--primary-clr);
+				border-radius: 5px;
+				border: 1px solid var(--prop-clr);
+			}
+			&[type='checkbox'] {
+				width: 1.5rem;
+				height: 1.5rem;
+			}
+			&[type='color'] {
+				width: 2rem;
+				height: 2rem;
+				border: none;
+				outline: none;
+			}
+		}
 	}
-	.controls input[type='text'] {
-		padding: 0.5em 1em;
-		/* border-radius: 5px;
-		border: none;
-		outline: none; */
-	}
-	.controls input[type='checkbox'] {
-		width: 1.5rem;
-		height: 1.5rem;
-	}
-	.controls input[type='color'] {
-		width: 2rem;
-		height: 2rem;
-		border: none;
-		outline: none;
+	@media screen and (max-width: 600px) {
+		.controls {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	pre {
@@ -253,5 +262,6 @@
 		align-items: center;
 		gap: 1rem;
 		margin-bottom: 1rem;
+		overflow-x: auto;
 	}
 </style>
