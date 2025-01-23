@@ -4,9 +4,9 @@
 	/**
 	 * @type {{
 	 * link: string;
-	 * color: string;
-	 * colorDark: string;
-	 * darkMode: boolean;
+	 * color?: string;
+	 * colorDark?: string;
+	 * darkMode?: boolean;
 	 * }}
 	 */
 	let { link, color = '#2f81f6', colorDark = '#89baff', darkMode = false } = $props();

@@ -5,12 +5,12 @@
 	 * @type {{
 	 * link: string;
 	 * pageURL?: string;
-	 * color: string;
-	 * colorDark: string;
-	 * colorfulNames: boolean;
-	 * darkMode: boolean;
-	 * commentsLimit: number;
-	 * height: number | undefined;
+	 * color?: string;
+	 * colorDark?: string;
+	 * colorfulNames?: boolean;
+	 * darkMode?: boolean;
+	 * commentsLimit?: number;
+	 * height?: number | undefined;
 	 * }}
 	 */
 	let {
