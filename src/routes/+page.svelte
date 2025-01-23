@@ -11,7 +11,7 @@
 
 	// Post variables
 	/** @type {string}*/
-	let postLink = $state('https://t.me/computly/159');
+	let postLink = $state('https://t.me/computly/439');
 	/** @type {string}*/
 	let postColor = $state('#2f81f6');
 	/** @type {string}*/

@@ -49,7 +49,7 @@ Embed a telegram post widget in your svelte application.
   import { Post } from 'sveltegram';
 </script>
 
-<Post link="https://t.me/computly/188" />
+<Post link="https://t.me/computly/439" />
 ```
 
 ### API
