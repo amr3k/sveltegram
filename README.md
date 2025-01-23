@@ -154,9 +154,6 @@ pnpm install
 
   > `text`: message
 
-- [ ] Create a new logo consists of svelte logo in telegram colors & cartoonish style
-- [ ] Migrate the codebase to svelte 5
-- [ ] Deploy to cloudflare
 - [ ] Publish to [jsr.io](https://jsr.io)
 
 # License
