@@ -20,7 +20,7 @@
 		font-family: Paytone One, sans-serif;
 		font-size: 10vmin;
 	}
-	header :is(h1, p) {
+	header :is(:global(h1, p)) {
 		margin: 0;
 	}
 </style>

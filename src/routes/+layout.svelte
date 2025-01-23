@@ -2,6 +2,13 @@
 	import '../style.css';
 	import { theme } from '../store/theme';
 	import Header from '../Components/Header.svelte';
+	/**
+	 * @typedef {Object} Props
+	 * @property {import('svelte').Snippet} [children]
+	 */
+
+	/** @type {Props} */
+	let { children } = $props();
 
 	if ($theme === null) {
 		const prefersDark =
@@ -13,7 +20,7 @@
 <div class="background-svg"></div>
 <main>
 	<Header />
-	<slot />
+	{@render children?.()}
 </main>
 
 <style>

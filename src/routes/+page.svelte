@@ -11,27 +11,27 @@
 
 	// Post variables
 	/** @type {string}*/
-	let postLink = 'https://t.me/computly/159';
+	let postLink = $state('https://t.me/computly/159');
 	/** @type {string}*/
-	let postColor = '#2f81f6';
+	let postColor = $state('#2f81f6');
 	/** @type {string}*/
-	let postColorDark = '#89baff';
+	let postColorDark = $state('#89baff');
 	/** @type {boolean}*/
-	let darkThemeCheckbox = false;
+	let darkThemeCheckbox = $state(false);
 
 	// Discussions variables
 	/** @type {string}*/
-	let disLink = 'https://t.me/contest/198';
+	let disLink = $state('https://t.me/contest/198');
 	/** @type {string}*/
-	let disColor = '#2f81f6';
+	let disColor = $state('#2f81f6');
 	/** @type {string}*/
-	let disColorDark = '#89baff';
+	let disColorDark = $state('#89baff');
 	/** @type {boolean}*/
-	let disColorfulNames = false;
+	let disColorfulNames = $state(false);
 	/** @type {number}*/
-	let disCommentsLimit = 5;
+	let disCommentsLimit = $state(5);
 	/** @type {number|undefined}*/
-	let disHeight;
+	let disHeight = $state();
 
 	// Login variables
 	/** @type {string}*/
@@ -99,7 +99,7 @@
 		type="checkbox"
 		id="post-dark-switch"
 		bind:checked={darkThemeCheckbox}
-		on:change={switchTheme}
+		onchange={switchTheme}
 	/>
 	<label for="post-color"> Accent color </label>
 	<input type="color" id="post-color" bind:value={postColor} title={postColor} />
@@ -145,7 +145,7 @@
 		type="checkbox"
 		id="post-dark-switch"
 		bind:checked={darkThemeCheckbox}
-		on:change={switchTheme}
+		onchange={switchTheme}
 	/>
 	<label for="dis-color"> Accent color </label>
 	<input type="color" id="dis-color" bind:value={disColor} title={disColor} />
