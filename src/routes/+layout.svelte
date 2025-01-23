@@ -27,7 +27,7 @@
 <style>
 	main {
 		position: relative;
-		width: 70vmax;
+		max-width: 70vmax;
 		margin: 0 auto;
 		border-radius: 10px;
 		padding: 1rem;
