@@ -19,7 +19,7 @@
 <style>
 	main {
 		position: relative;
-		width: min(90%, 600px);
+		width: 70vmax;
 		margin: 0 auto;
 		border-radius: 10px;
 		padding: 1rem;
