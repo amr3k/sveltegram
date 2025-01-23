@@ -52,9 +52,11 @@
 
 	function switchTheme() {
 		theme.set(darkThemeCheckbox ? 'dark' : 'light');
-		darkThemeCheckbox
-			? document.body.classList.add('dark')
-			: document.body.classList.remove('dark');
+		if (darkThemeCheckbox) {
+			document.body.classList.add('dark');
+		} else {
+			document.body.classList.remove('dark');
+		}
 	}
 	onMount(() => {
 		darkThemeCheckbox = $theme === 'dark';
