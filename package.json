@@ -11,7 +11,7 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
 		"format": "prettier --ignore-path .gitignore --check --write .",
-		"lint": "prettier --ignore-path .gitignore --check . && eslint --ignore-path .gitignore ."
+		"lint": "prettier --ignore-path .gitignore --check --write . && eslint --ignore-pattern .gitignore ."
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.18.0",
