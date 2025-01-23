@@ -16,13 +16,13 @@
 	<div class="row">
 		<span>link <strong>(required)</strong></span>
 		<span>string</span>
-		<span />
+		<span></span>
 		<span><strong>Description: </strong>Telegram post link. You can copy it from context menu</span>
 	</div>
 	<div class="row">
 		<span>pageURL</span>
 		<span>string</span>
-		<span />
+		<span></span>
 		<span
 			><strong>Description: </strong>As shown in
 			<a href="https://core.telegram.org/widgets/discussion">Telegram docs</a>, you can load
@@ -67,7 +67,7 @@
 	<div class="row">
 		<span>height</span>
 		<span>number</span>
-		<span />
+		<span></span>
 		<span
 			><strong>Description: </strong>Widget height. The default value is 'auto' which is determined
 			by Telegram</span

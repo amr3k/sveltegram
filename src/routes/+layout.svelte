@@ -10,7 +10,7 @@
 	}
 </script>
 
-<div class="background-svg" />
+<div class="background-svg"></div>
 <main>
 	<Header />
 	<slot />

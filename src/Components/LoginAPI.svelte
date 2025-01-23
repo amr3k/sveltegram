@@ -16,7 +16,7 @@
 	<div class="row">
 		<span>username <strong>(required)</strong></span>
 		<span>string</span>
-		<span />
+		<span></span>
 		<span><strong>Description: </strong>Your bot username</span>
 	</div>
 	<div class="row">
@@ -30,7 +30,7 @@
 	<div class="row">
 		<span>redirectURL</span>
 		<span>string</span>
-		<span />
+		<span></span>
 		<span
 			><strong>Description: </strong>In case you chose <code>redirect</code> as an authentication method,
 			you must set this property</span
