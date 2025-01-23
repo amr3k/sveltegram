@@ -64,10 +64,11 @@
 	}
 
 	onMount(() => {
+		cleanStart();
 		if ('telegramCallback' in window) {
 			window.telegramCallback = telegramCallback;
+			console.log('telegramCallback is already defined');
 		}
-		cleanStart();
 	});
 </script>
 
