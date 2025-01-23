@@ -143,7 +143,10 @@ pnpm install
 ```
 
 # TODO
-
+- [X] Add login widget
+- [X] Migrate to svelte 5
+- [X] Deploy demo to cloudflare
+- [ ] Add [Share button widget](https://core.telegram.org/widgets/share)
 - [ ] Publish to [jsr.io](https://jsr.io)
 
 # License
