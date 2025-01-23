@@ -65,9 +65,6 @@
 	});
 </script>
 
-<svelte:head>
-	<title>Sveltegram</title>
-</svelte:head>
 <GithubCorner --fill-color={darkThemeCheckbox ? '#26a457' : '#151513'} />
 <h1>Installation</h1>
 <pre class="language-bash"><code class="token builtin class-name">npm</code><code
