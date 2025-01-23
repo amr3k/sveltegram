@@ -104,14 +104,15 @@ Embed a telegram login button in your svelte application.
 
 ### API
 
-| Property                                            | Type    | Default    | Description                                                                        |
-| --------------------------------------------------- | ------- | ---------- | ---------------------------------------------------------------------------------- |
-| `username` **(Required)**                           | string  |            | Your telegram bot username                                                         |
-| `authType`                                          | string  | `callback` | How to authenticate users? Choices are [callback, redirect]                        |
-| `redirectURL` **Required if `authType = redirect`** | string  |            | In case you chose redirect as an authentication method, you must set this property |
-| `requestAccess`                                     | boolean | `false`    | Whether you want to send messages to the user in the future                        |
-| `size`                                              | string  | `medium`   | Login button size. choices are [small, medium,large]                               |
-| `buttonRadius`                                      | number  | `10`       | Login button radius (in pixels)                                                    |
+| Property                                            | Type     | Default    | Description                                                                        |
+| --------------------------------------------------- | -------- | ---------- | ---------------------------------------------------------------------------------- |
+| `username` **(Required)**                           | string   |            | Your telegram bot username                                                         |
+| `authType`                                          | string   | `callback` | How to authenticate users? Choices are [callback, redirect]                        |
+| `redirectURL` **Required if `authType = redirect`** | string   |            | In case you chose redirect as an authentication method, you must set this property |
+| `requestAccess`                                     | boolean  | `false`    | Whether you want to send messages to the user in the future                        |
+| `size`                                              | string   | `medium`   | Login button size. choices are [small, medium,large]                               |
+| `buttonRadius`                                      | number   | `10`       | Login button radius (in pixels)                                                    |
+| `onauth` **(Required)**                             | Function |            | Callback function responsible for handling successful authentication               |
 
 # Content Security Policy
 
