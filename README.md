@@ -1,10 +1,6 @@
-[![Stand With Palestine](https://raw.githubusercontent.com/TheBSD/StandWithPalestine/main/banner-no-action.svg)](https://TheBSD.github.io/StandWithPalestine/)
-
 # Sveltegram
 
 This package allows you to embed telegram widgets in your svelte web application.
-
-Library size is **96 bytes** (min+gzipped). _[bundlephobia](https://bundlephobia.com/package/sveltegram@latest)_
 
 <div align="center">
   <img src="./images/Sveltegram.png" width="256px">
@@ -13,7 +9,6 @@ Library size is **96 bytes** (min+gzipped). _[bundlephobia](https://bundlephobia
 
 </div>
 
-[![StandWithPalestine](https://raw.githubusercontent.com/TheBSD/StandWithPalestine/main/badges/StandWithPalestine.svg)](https://github.com/amr3k/sveltegram)
 [![Demo](https://img.shields.io/website?label=Demo&url=https%3A%2F%2Fsveltegram.a3k.me)](https://sveltegram.a3k.me)
 ![GitHub branch checks state](https://img.shields.io/github/checks-status/amr3k/sveltegram/main)
 [![Rate this package](https://badges.openbase.com/js/rating/sveltegram.svg?token=2HClQ+1c8RGTv7bSzxuDGJUEVaixuhKGcafO5McxW4A=)](https://openbase.com/js/sveltegram?utm_source=embedded&utm_medium=badge&utm_campaign=rate-badge)
@@ -150,6 +145,20 @@ pnpm install
 # TODO
 
 - [x] Add support for [login widget](https://core.telegram.org/widgets/login)
+- [ ] Use direct bot API call with the following data:
+
+  > `https://api.telegram.org/bot<BOT_TOKEN>/sendMessage`
+
+  > Body:
+
+  > `chat_id`: user_id
+
+  > `text`: message
+
+- [ ] Create a new logo consists of svelte logo in telegram colors & cartoonish style
+- [ ] Migrate the codebase to svelte 5
+- [ ] Deploy to cloudflare
+- [ ] Publish to [jsr.io](https://jsr.io)
 
 # License
 
