@@ -60,6 +60,9 @@
 		<span>onauth <strong>(required)</strong></span>
 		<span>Function</span>
 		<span></span>
-		<span><strong>Description: </strong>Callback function responsible for handling successful authentication</span>
+		<span
+			><strong>Description: </strong>Callback function responsible for handling successful
+			authentication</span
+		>
 	</div>
 </div>

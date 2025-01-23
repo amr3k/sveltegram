@@ -18,7 +18,7 @@ export async function POST({ request }) {
 			`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${body.id}&parse_mode=HTML&text=${encodeURIComponent(message)}`
 		);
 		if (res.ok) {
-			return json({ message: "Message was sent successfully!" });
+			return json({ message: 'Message was sent successfully!' });
 		} else {
 			const _body = await res.json();
 			console.error('Bot server error ', _body);

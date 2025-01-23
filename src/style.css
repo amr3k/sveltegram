@@ -13,7 +13,8 @@ body {
 	--tbl-row-hov-clr: hsl(100 100% 80% / 0.5);
 	--prop-clr: hsl(210 100% 30%);
 	--desc-clr: hsl(0 0% 30%);
-	--mono-font: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+	--mono-font: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas,
+		'DejaVu Sans Mono', monospace;
 	font-family: system-ui, sans-serif;
 }
 
@@ -37,26 +38,32 @@ body.dark {
 	width: 100vw;
 	height: 100dvh;
 	z-index: -1;
-	background-image: radial-gradient(circle at 16% 83%,
+	background-image: radial-gradient(
+			circle at 16% 83%,
 			rgba(148, 148, 148, 0.06) 0%,
 			rgba(148, 148, 148, 0.06) 50%,
 			rgba(63, 63, 63, 0.06) 50%,
-			rgba(63, 63, 63, 0.06) 100%),
-		radial-gradient(circle at 68% 87%,
+			rgba(63, 63, 63, 0.06) 100%
+		),
+		radial-gradient(
+			circle at 68% 87%,
 			rgba(66, 66, 66, 0.06) 0%,
 			rgba(66, 66, 66, 0.06) 50%,
 			rgba(105, 105, 105, 0.06) 50%,
-			rgba(105, 105, 105, 0.06) 100%),
-		radial-gradient(circle at 38% 50%,
+			rgba(105, 105, 105, 0.06) 100%
+		),
+		radial-gradient(
+			circle at 38% 50%,
 			rgba(123, 123, 123, 0.06) 0%,
 			rgba(123, 123, 123, 0.06) 50%,
 			rgba(172, 172, 172, 0.06) 50%,
-			rgba(172, 172, 172, 0.06) 100%),
+			rgba(172, 172, 172, 0.06) 100%
+		),
 		linear-gradient(90deg, var(--svg-bg-grd-clr), var(--svg-bg-grd-clr));
 }
 
 .api {
-	&>div {
+	& > div {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		padding: 0.5rem;
@@ -80,12 +87,12 @@ body.dark {
 				border-radius: 0 0 5px 5px;
 			}
 
-			&>span {
+			& > span {
 				&:first-child {
 					font-family: var(--mono-font);
 					color: var(--prop-clr);
 
-					&>strong {
+					& > strong {
 						color: var(--primary-clr);
 					}
 				}
@@ -99,7 +106,7 @@ body.dark {
 					grid-area: 2/1/3/4;
 					color: var(--desc-clr);
 
-					&>strong {
+					& > strong {
 						padding-inline-end: 0.5ch;
 					}
 				}
