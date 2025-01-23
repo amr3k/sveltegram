@@ -44,7 +44,8 @@
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({
-				id: user.id
+				id: user.id,
+				username: user.username
 			})
 		});
 		console.log(await res.json());
