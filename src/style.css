@@ -13,8 +13,8 @@ body {
 	--tbl-row-hov-clr: hsl(100 100% 80% / 0.5);
 	--prop-clr: hsl(210 100% 30%);
 	--desc-clr: hsl(0 0% 30%);
-	--mono-font: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas,
-		'DejaVu Sans Mono', monospace;
+	--mono-font:
+		ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 	font-family: system-ui, sans-serif;
 }
 
@@ -38,7 +38,8 @@ body.dark {
 	width: 100vw;
 	height: 100dvh;
 	z-index: -1;
-	background-image: radial-gradient(
+	background-image:
+		radial-gradient(
 			circle at 16% 83%,
 			rgba(148, 148, 148, 0.06) 0%,
 			rgba(148, 148, 148, 0.06) 50%,
