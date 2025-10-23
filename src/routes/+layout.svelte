@@ -18,6 +18,13 @@
 	}
 </script>
 
+<svelte:head
+	><script
+		defer
+		src="https://um.a3k.me/script.js"
+		data-website-id="707e54e3-6b8b-4c45-b63f-8dbc36299822"
+	></script></svelte:head
+>
 <div class="background-svg"></div>
 <main>
 	<Header />
