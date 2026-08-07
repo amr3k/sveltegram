@@ -1,6 +1,13 @@
 <script>
 	import { onMount } from 'svelte';
 
+	export function logout() {
+		if (typeof document !== 'undefined') {
+			document.cookie = 'telegram_login=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+			document.cookie = 'tg-login=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+		}
+	}
+
 	/**
 	 * @type {{
 	 * username: string; // bot username
