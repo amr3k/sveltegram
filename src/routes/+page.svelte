@@ -82,8 +82,8 @@
 <code class="token tag">&lt;Post</code>
   <code class="token attr-name">link=</code><code class="token string">"{postLink}"</code
 		>{#if $theme === 'dark'}<br />  <code class="token attr-name">darkMode=</code><code
-			class="token builtin">&lbrace;true&rbrace;</code
-		>{/if}
+				class="token builtin">&lbrace;true&rbrace;</code
+			>{/if}
   <code class="token attr-name">color=</code><code class="token string">"{postColor}"</code>
   <code class="token attr-name">colorDark=</code><code class="token string">"{postColorDark}"</code>
 <code class="token tag">/&gt;</code></pre>
@@ -121,21 +121,21 @@
 <code class="token tag">&lt;Discussions</code>
   <code class="token attr-name">link=</code><code class="token string">"{discussionLink}"</code
 	>{#if $theme === 'dark'}<br />  <code class="token attr-name">darkMode=</code><code
-		class="token builtin">&lbrace;true&rbrace;</code
-	>{/if}
+			class="token builtin">&lbrace;true&rbrace;</code
+		>{/if}
   <code class="token attr-name">color=</code><code class="token string">"{discussionColor}"</code>
   <code class="token attr-name">colorDark=</code><code class="token string"
 		>"{discussionColorDark}"</code
 	>{#if discussionColorfulNames}<br />  <code class="token attr-name"
-		>colorfulNames=<code class="token builtin">&lbrace;{discussionColorfulNames}&rbrace;</code
-		></code
-	>{/if}
+			>colorfulNames=<code class="token builtin">&lbrace;{discussionColorfulNames}&rbrace;</code
+			></code
+		>{/if}
   <code class="token attr-name"
 		>commentsLimit=<code class="token builtin">&lbrace;{discussionCommentsLimit}&rbrace;</code
 		></code
 	>{#if discussionHeight}<br />  <code class="token attr-name"
-		>height=<code class="token attr-builtin">&lbrace;{discussionHeight}&rbrace;</code></code
-	>{/if}
+			>height=<code class="token attr-builtin">&lbrace;{discussionHeight}&rbrace;</code></code
+		>{/if}
 <code class="token tag">/&gt;</code></pre>
 <h3>Demo</h3>
 <div class="controls">
