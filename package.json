@@ -1,7 +1,7 @@
 {
 	"name": "sveltegram",
 	"description": "Reactive Telegram widgets built with svelte",
-	"version": "2.0.12",
+	"version": "2.1.0",
 	"license": "MIT",
 	"scripts": {
 		"dev": "vite dev",
@@ -15,19 +15,22 @@
 		"lint": "oxlint"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-cloudflare": "^7.2.9",
-		"@sveltejs/kit": "^2.70.1",
-		"@sveltejs/package": "^2.5.8",
+		"@sveltejs/adapter-cloudflare": "^8.0.0",
+		"@sveltejs/kit": "^3.0.0",
+		"@sveltejs/package": "^3.0.0",
 		"@sveltejs/vite-plugin-svelte": "^7.2.0",
 		"dotenv": "^17.4.2",
 		"oxfmt": "^0.78.0",
 		"oxlint": "^1.93.0",
 		"publint": "^0.3.22",
-		"svelte": "^5.56.8",
-		"svelte-check": "^4.7.3",
+		"svelte": "^5.57.2",
+		"svelte-check": "^4.7.5",
 		"tslib": "^2.8.1",
-		"typescript": "^7.0.2",
+		"typescript": "^6.0.3",
 		"vite": "^8.1.5"
+	},
+	"engines": {
+		"node": ">=22.17.0"
 	},
 	"type": "module",
 	"author": "Amr <contact@a3k.me> (https://www.a3k.me/)",
@@ -68,5 +71,9 @@
 	"module": "./dist/index.js",
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"packageManager": "pnpm@12.21.0"
+	"packageManager": "pnpm@12.21.0",
+	"imports": {
+		"#lib": "./src/lib/index.js",
+		"#lib/*": "./src/lib/*"
+	}
 }
