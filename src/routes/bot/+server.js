@@ -1,9 +1,9 @@
-import { BOT_TOKEN } from '$env/static/private';
-import { error, json } from '@sveltejs/kit';
+import { BOT_TOKEN } from '$app/env/private';
+import { error } from '@sveltejs/kit';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export async function POST({ request }) {
-	/** @type {import('$lib/types/user').User}*/
+	/** @type {import('#lib/types/user.js').User}*/
 	const body = await request.json();
 	try {
 		const message = [
@@ -18,7 +18,7 @@ export async function POST({ request }) {
 			`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${body.id}&parse_mode=HTML&text=${encodeURIComponent(message)}`
 		);
 		if (res.ok) {
-			return json({ message: 'Message was sent successfully!' });
+			return Response.json({ message: 'Message was sent successfully!' });
 		} else {
 			const _body = await res.json();
 			console.error('Bot server error ', _body);

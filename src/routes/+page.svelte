@@ -1,7 +1,7 @@
 <script>
-	import Discussions from '$lib/Discussions.svelte';
-	import Login from '$lib/Login.svelte';
-	import Post from '$lib/Post.svelte';
+	import Discussions from '#lib/Discussions.svelte';
+	import Login from '#lib/Login.svelte';
+	import Post from '#lib/Post.svelte';
 	import { onMount } from 'svelte';
 	import DiscussionsApi from '../Components/DiscussionsAPI.svelte';
 	import LoginApi from '../Components/LoginAPI.svelte';
@@ -37,7 +37,7 @@
 	/** @type {string}*/
 	let loginUsername = 'ComputlyBot';
 
-	async function telegramLogin(/** @type {import('$lib/types/user').User}*/ user) {
+	async function telegramLogin(/** @type {import('#lib/types/user.js').User}*/ user) {
 		const res = await fetch(window.location.origin + '/bot', {
 			method: 'POST',
 			headers: {

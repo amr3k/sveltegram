@@ -1,4 +1,4 @@
-import type { User } from '$lib/types/user';
+import type { User } from '#lib/types/user.js';
 /// <reference types="@sveltejs/kit" />
 
 // See https://kit.svelte.dev/docs/types#app
