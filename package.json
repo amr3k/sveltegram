@@ -3,6 +3,7 @@
 	"description": "Reactive Telegram widgets built with svelte",
 	"version": "2.1.0",
 	"license": "MIT",
+	"sideEffects": false,
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
