@@ -1,0 +1,13 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"env": {
+		"browser": true,
+		"node": true
+	},
+	"ignorePatterns": ["build/**", ".svelte-kit/**", "dist/**", "node_modules/**"],
+	"rules": {
+		"no-unused-vars": "warn",
+		"typescript/no-unused-vars": "warn",
+		"typescript/no-explicit-any": "warn"
+	}
+}

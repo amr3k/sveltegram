@@ -12,7 +12,6 @@ declare namespace App {
 
 declare global {
 	interface Window {
-		// eslint-disable-next-line no-unused-vars
 		telegramCallback: (data: User) => void;
 	}
 }

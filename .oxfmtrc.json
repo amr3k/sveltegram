@@ -1,0 +1,30 @@
+{
+	"$schema": "./node_modules/oxfmt/configuration_schema.json",
+	"useTabs": true,
+	"singleQuote": true,
+	"trailingComma": "none",
+	"printWidth": 100,
+	"sortPackageJson": false,
+	"svelte": {},
+	"associations": [
+		{
+			"files": ["*.svelte"],
+			"language": "svelte"
+		}
+	],
+	"ignorePatterns": [
+		".DS_Store",
+		".github",
+		"node_modules",
+		"/build",
+		"/.vercel",
+		"/static",
+		"/package/",
+		".env",
+		".env.*",
+		".dev.vars",
+		"!.env.example",
+		"pnpm-lock.yaml",
+		"prism.css"
+	]
+}
