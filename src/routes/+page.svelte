@@ -2,10 +2,12 @@
 	import Discussions from '#lib/Discussions.svelte';
 	import Login from '#lib/Login.svelte';
 	import Post from '#lib/Post.svelte';
+	import Share from '#lib/Share.svelte';
 	import { onMount } from 'svelte';
 	import DiscussionsApi from '../Components/DiscussionsAPI.svelte';
 	import LoginApi from '../Components/LoginAPI.svelte';
 	import PostAPI from '../Components/PostAPI.svelte';
+	import ShareApi from '../Components/ShareAPI.svelte';
 	import { theme } from '../store/theme';
 	import GithubCorner from './_GithubCorner.svelte';
 
@@ -36,6 +38,16 @@
 	// Login variables
 	/** @type {string}*/
 	let loginUsername = 'ComputlyBot';
+
+	// Share variables
+	/** @type {string}*/
+	let shareURL = $state('https://sveltegram.a3k.me');
+	/** @type {string}*/
+	let shareComment = $state('Telegram widgets for Svelte');
+	/** @type {'medium' | 'large'}*/
+	let shareSize = $state('medium');
+	/** @type {boolean}*/
+	let shareShowText = $state(true);
 
 	async function telegramLogin(/** @type {import('#lib/types/user.js').User}*/ user) {
 		const res = await fetch(window.location.origin + '/bot', {
@@ -203,6 +215,44 @@
 </div>
 <LoginApi />
 
+<h2>Telegram share button</h2>
+<h3>Code</h3>
+<pre class="language-js code-demo"><code class="token tag">&lt;script&gt;</code>
+  <code class="token keyword">import</code> <code class="token function"
+		>&lbrace; Share &rbrace;</code
+	> <code class="token keyword">from</code> <code class="token string">'sveltegram';</code>
+<code class="token tag">&lt;/script&gt;</code>
+<!-- I love pain -->
+<code class="token tag">&lt;Share</code>
+  <code class="token attr-name">url=</code><code class="token string">"{shareURL}"</code
+	>{#if shareComment}<br />  <code class="token attr-name">comment=</code><code class="token string"
+			>"{shareComment}"</code
+		>{/if}<br />  <code class="token attr-name">size=</code><code class="token string"
+		>"{shareSize}"</code
+	>{#if !shareShowText}<br />  <code class="token attr-name">showText=</code><code
+			class="token builtin">&lbrace;false&rbrace;</code
+		>{/if}
+<code class="token tag">/&gt;</code></pre>
+<h3>Demo</h3>
+<div class="controls">
+	<label for="share-url">URL</label>
+	<input type="text" id="share-url" bind:value={shareURL} />
+	<label for="share-comment">Comment</label>
+	<input type="text" id="share-comment" bind:value={shareComment} />
+	<label for="share-size">Button size</label>
+	<select id="share-size" bind:value={shareSize}>
+		<option value="medium">Medium</option>
+		<option value="large">Large</option>
+	</select>
+	<label for="share-show-text">Show text</label>
+	<input type="checkbox" id="share-show-text" bind:checked={shareShowText} />
+</div>
+
+<div class="widget">
+	<Share url={shareURL} comment={shareComment} size={shareSize} showText={shareShowText} />
+</div>
+<ShareApi />
+
 <style>
 	h2 {
 		margin-block-start: 5rem;
@@ -234,6 +284,13 @@
 				border: none;
 				outline: none;
 			}
+		}
+		& select {
+			padding: 0.5em 1em;
+			background-color: var(--bg-clr);
+			color: var(--primary-clr);
+			border-radius: 5px;
+			border: 1px solid var(--prop-clr);
 		}
 	}
 	@media screen and (max-width: 600px) {
