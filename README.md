@@ -31,6 +31,9 @@ This package allows you to embed telegram widgets in your svelte web application
   - [Login widget](#login-widget)
     - [How to use](#how-to-use-2)
     - [API](#api-2)
+  - [Share widget](#share-widget)
+    - [How to use](#how-to-use-3)
+    - [API](#api-3)
 - [Content Security Policy](#content-security-policy)
 - [Limitations](#limitations)
 - [Development](#development)
@@ -114,6 +117,29 @@ Embed a telegram login button in your svelte application.
 | `buttonRadius`                                      | number   | `10`       | Login button radius (in pixels)                                                    |
 | `onauth` **(Required) if `authType = callback`**    | Function |            | Callback function responsible for handling successful authentication               |
 
+## Share widget
+
+Embed a telegram share button in your svelte application.
+
+### How to use
+
+```js
+<script>
+  import { Share } from 'sveltegram';
+</script>
+
+<Share url="https://sveltegram.a3k.me" />
+```
+
+### API
+
+| Property             | Type    | Default  | Description                                          |
+| -------------------- | ------- | -------- | ---------------------------------------------------- |
+| `url` **(Required)** | string  |          | Absolute URL of the page you want to share           |
+| `comment`            | string  |          | Text sent along with the link (the user can edit it) |
+| `size`               | string  | `medium` | Button size. Choices are [medium, large]             |
+| `showText`           | boolean | `true`   | Show the "Share" label next to the Telegram logo     |
+
 # Content Security Policy
 
 If you are using CSP, you'll need to allow scripts and iFrames coming from Telegram domains as follows:
@@ -147,7 +173,7 @@ pnpm install
 - [x] Add login widget
 - [x] Migrate to svelte 5
 - [x] Deploy demo to cloudflare
-- [ ] Add [Share button widget](https://core.telegram.org/widgets/share)
+- [x] Add [Share button widget](https://core.telegram.org/widgets/share)
 - [ ] Publish to [jsr.io](https://jsr.io)
 
 # License
