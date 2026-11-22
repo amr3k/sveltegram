@@ -24,7 +24,6 @@
 		".env.*",
 		".dev.vars",
 		"!.env.example",
-		"pnpm-lock.yaml",
-		"prism.css"
+		"pnpm-lock.yaml"
 	]
 }
