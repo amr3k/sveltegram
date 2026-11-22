@@ -31,9 +31,10 @@
 	/** @type {string}*/
 	let iFrameSource = $state('');
 	$effect(() => {
-		iFrameSource = `${link}?embed=1&discussion=1&page_url=${pageURL}&comments_limit=${commentsLimit}${
-			darkMode ? '&dark=1' : ''
-		}&color=${color.replace('#', '')}&dark_color=${colorDark.replace('#', '')}${
+		iFrameSource = `${link}?embed=1&discussion=1&page_url=${pageURL}&comments_limit=${commentsLimit}&dark=${darkMode}&color=${color.replace(
+			'#',
+			''
+		)}&dark_color=${colorDark.replace('#', '')}${
 			colorfulNames ? '&colorful=1' : ''
 		}${height ? `&height=${height}` : ''}`;
 		iFrameStuff();
@@ -68,12 +69,16 @@
 
 	function iFrameStuff() {
 		try {
-			if (div) {
-				const iframe = div.getElementsByTagName('iframe')[0];
-				if (iframe) {
+			if (!div || !iFrameSource) {
+				return;
+			}
+
+			const iframe = div.getElementsByTagName('iframe')[0];
+			if (iframe) {
+				if (iframe.getAttribute('src') !== iFrameSource) {
 					iframe.src = iFrameSource;
-					iframe.title = 'Telegram comments';
 				}
+				iframe.title = 'Telegram comments';
 			}
 		} catch (e) {
 			// iFrame is not loaded yet
@@ -83,6 +88,16 @@
 	onMount(() => {
 		cleanStart();
 		iFrameStuff();
+
+		// The Telegram script inserts its iframe asynchronously. Re-apply the
+		// reactive source once it exists so theme changes made before load are
+		// not lost.
+		const observer = new MutationObserver(() => iFrameStuff());
+		if (div) {
+			observer.observe(div, { childList: true });
+		}
+
+		return () => observer.disconnect();
 	});
 </script>
 

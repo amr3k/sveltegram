@@ -1,40 +1,32 @@
-<div class="api">
-	<h3>API</h3>
-	<p>
-		Please refer to <a
-			href="https://core.telegram.org/widgets/post"
-			target="_blank"
-			rel="noreferrer">Telegram documentation</a
-		> for more details.
-	</p>
-	<div class="head">
-		<span>Property</span>
-		<span>Type</span>
-		<span>Default</span>
-	</div>
+<script>
+	import ApiTable from './docs/ApiTable.svelte';
 
-	<div class="row">
-		<span>link <strong>(required)</strong></span>
-		<span>string</span>
-		<span></span>
-		<span><strong>Description: </strong>Telegram post link. You can copy it from context menu</span>
-	</div>
-	<div class="row">
-		<span>darkMode</span>
-		<span>boolean</span>
-		<span>false</span>
-		<span><strong>Description: </strong>Enable dark mode</span>
-	</div>
-	<div class="row">
-		<span>color</span>
-		<span>string</span>
-		<span>#2f81f6</span>
-		<span><strong>Description: </strong>Accent color</span>
-	</div>
-	<div class="row">
-		<span>colorDark</span>
-		<span>string</span>
-		<span>#89baff</span>
-		<span><strong>Description: </strong>Accent color in dark mode</span>
-	</div>
-</div>
+	const properties = [
+		{
+			name: 'link',
+			type: 'string',
+			required: true,
+			description: 'Telegram post link. You can copy it from context menu'
+		},
+		{
+			name: 'darkMode',
+			type: 'boolean',
+			default: 'false',
+			description: 'Enable dark mode'
+		},
+		{
+			name: 'color',
+			type: 'string',
+			default: '#2f81f6',
+			description: 'Accent color'
+		},
+		{
+			name: 'colorDark',
+			type: 'string',
+			default: '#89baff',
+			description: 'Accent color in dark mode'
+		}
+	];
+</script>
+
+<ApiTable docsHref="https://core.telegram.org/widgets/post" {properties} />
