@@ -4,6 +4,7 @@
 	import CodeBlock from '../../Components/docs/CodeBlock.svelte';
 	import ThemeToggle from '../../Components/docs/ThemeToggle.svelte';
 	import { discussionsSnippet } from '../../Components/docs/snippets.js';
+	import { theme } from '../../store/theme';
 
 	let discussionLink = $state('https://t.me/contest/198');
 	let discussionColor = $state('#2f81f6');
@@ -50,7 +51,7 @@
 			<div class="demo-stage">
 				<Discussions
 					link={discussionLink}
-					{darkMode}
+					darkMode={$theme === 'dark'}
 					color={discussionColor}
 					colorDark={discussionColorDark}
 					colorfulNames={discussionColorfulNames}

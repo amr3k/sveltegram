@@ -4,6 +4,7 @@
 	import CodeBlock from '../../Components/docs/CodeBlock.svelte';
 	import ThemeToggle from '../../Components/docs/ThemeToggle.svelte';
 	import { postSnippet } from '../../Components/docs/snippets.js';
+	import { theme } from '../../store/theme';
 
 	let postLink = $state('https://t.me/computly/439');
 	let postColor = $state('#2f81f6');
@@ -37,7 +38,12 @@
 		</div>
 		<div class="demo-grid">
 			<div class="demo-stage">
-				<Post link={postLink} {darkMode} color={postColor} colorDark={postColorDark} />
+				<Post
+					link={postLink}
+					darkMode={$theme === 'dark'}
+					color={postColor}
+					colorDark={postColorDark}
+				/>
 			</div>
 			<div class="demo-controls">
 				<label class="field">

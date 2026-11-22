@@ -49,12 +49,16 @@
 
 	function iFrameStuff() {
 		try {
-			if (div) {
-				const iframe = div.getElementsByTagName('iframe')[0];
-				if (iframe) {
+			if (!div || !iFrameSource) {
+				return;
+			}
+
+			const iframe = div.getElementsByTagName('iframe')[0];
+			if (iframe) {
+				if (iframe.getAttribute('src') !== iFrameSource) {
 					iframe.src = iFrameSource;
-					iframe.title = 'Telegram post';
 				}
+				iframe.title = 'Telegram post';
 			}
 		} catch (e) {
 			// iFrame is not loaded yet
@@ -64,6 +68,16 @@
 	onMount(() => {
 		cleanStart();
 		iFrameStuff();
+
+		// The Telegram script inserts its iframe asynchronously. Re-apply the
+		// reactive source once it exists so theme changes made before load are
+		// not lost.
+		const observer = new MutationObserver(() => iFrameStuff());
+		if (div) {
+			observer.observe(div, { childList: true });
+		}
+
+		return () => observer.disconnect();
 	});
 </script>
 
