@@ -35,6 +35,7 @@ This package allows you to embed telegram widgets in your svelte web application
     - [How to use](#how-to-use-3)
     - [API](#api-3)
 - [Content Security Policy](#content-security-policy)
+  - [Login widget: bot domain](#login-widget-bot-domain)
 - [Limitations](#limitations)
 - [Development](#development)
   - [Install](#install)
@@ -142,12 +143,36 @@ Embed a telegram share button in your svelte application.
 
 # Content Security Policy
 
-If you are using CSP, you'll need to allow scripts and iFrames coming from Telegram domains as follows:
+If you are using CSP, allow the Telegram sources used by the widgets you embed:
+
+- **Post, Discussions, Share:** `script-src https://telegram.org`, `frame-src https://t.me`
+- **Login:** `script-src https://telegram.org`, `frame-src https://oauth.telegram.org`
+
+With every widget enabled, the directives look like this:
 
 ```js
-script-src https://telegram.org;
-frame-src https://t.me;
+script-src 'self' https://telegram.org;
+frame-src 'self' https://t.me https://oauth.telegram.org;
 ```
+
+In SvelteKit, put these under `csp.directives` (`vite.config.js` on SvelteKit 3, `svelte.config.js` on older versions):
+
+```js
+csp: {
+	directives: {
+		'script-src': ['self', 'https://telegram.org'],
+		'frame-src': ['self', 'https://t.me', 'https://oauth.telegram.org']
+	}
+}
+```
+
+> The Login widget's default `callback` auth type also needs `'unsafe-eval'` in `script-src`, because Telegram's script parses `data-onauth` with `eval()`. If you don't want to relax your CSP, use `authType="redirect"` instead. See [#51](https://github.com/amr3k/sveltegram/issues/51).
+
+## Login widget: bot domain
+
+Telegram only renders the login iframe when the page origin is registered with the bot. Register it in [@BotFather](https://t.me/botfather) with `/setdomain`, or under **Login Widget → Allowed URLs**. Use the exact HTTPS origin, for example `https://example.com` — `https://www.example.com` is a different origin, and `http://localhost` is not supported (the widget shows "Bot domain invalid").
+
+`https://oauth.telegram.org` sends its own `frame-ancestors` directive for the registered domain. That policy belongs to Telegram, not to your app, so adding `frame-ancestors` to your own CSP will not change whether the login iframe can be embedded. SvelteKit also ignores `frame-ancestors` when it delivers CSP through a `<meta>` tag (prerendered pages).
 
 # Limitations
 
