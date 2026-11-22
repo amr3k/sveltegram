@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/state';
+	import LinkIcon from './LinkIcon.svelte';
 	import Logo from './Logo.svelte';
 
 	const sections = [
@@ -18,10 +19,11 @@
 		}
 	];
 
+	/** @type {{ href: string, label: string, icon: 'github' | 'npm' | 'telegram' }[]} */
 	const links = [
-		{ href: 'https://github.com/amr3k/sveltegram', label: 'GitHub' },
-		{ href: 'https://www.npmjs.com/package/sveltegram', label: 'npm' },
-		{ href: 'https://core.telegram.org/widgets', label: 'Telegram widgets' }
+		{ href: 'https://github.com/amr3k/sveltegram', label: 'GitHub', icon: 'github' },
+		{ href: 'https://www.npmjs.com/package/sveltegram', label: 'npm', icon: 'npm' },
+		{ href: 'https://core.telegram.org/widgets', label: 'Telegram widgets', icon: 'telegram' }
 	];
 
 	let menuOpen = $state(false);
@@ -97,11 +99,11 @@
 
 {#snippet navigation()}
 	<nav class="nav" aria-label="Documentation">
-		{#each sections as section}
+		{#each sections as section (section.label)}
 			<div class="nav-group">
 				<p class="nav-title">{section.label}</p>
 				<ul>
-					{#each section.items as item}
+					{#each section.items as item (item.href)}
 						<li>
 							<a
 								href={item.href}
@@ -121,9 +123,14 @@
 	<div class="side-links">
 		<p class="nav-title">Links</p>
 		<ul>
-			{#each links as link}
+			{#each links as link (link.href)}
 				<li>
-					<a href={link.href} target="_blank" rel="noreferrer">{link.label}</a>
+					<a href={link.href} target="_blank" rel="noreferrer">
+						<span class="side-link-icon">
+							<LinkIcon name={link.icon} />
+						</span>
+						<span>{link.label}</span>
+					</a>
 				</li>
 			{/each}
 		</ul>
@@ -261,7 +268,9 @@
 
 	.nav a,
 	.side-links a {
-		display: block;
+		display: flex;
+		align-items: center;
+		gap: 8px;
 		padding: 7px 10px;
 		margin-left: -10px;
 		border-left: 2px solid transparent;
@@ -297,6 +306,17 @@
 
 	.side-links a {
 		font-size: 13px;
+	}
+
+	.side-link-icon {
+		display: inline-flex;
+		flex: none;
+		color: var(--muted);
+		transition: color 140ms ease;
+	}
+
+	.side-links a:hover .side-link-icon {
+		color: var(--stamp);
 	}
 
 	.colophon {
