@@ -1,0 +1,73 @@
+name: Publish
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - package.json
+  workflow_dispatch:
+
+# Never run two publishes at once; a second release must wait for the first.
+concurrency:
+  group: npm-publish
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    name: Publish to npm
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      id-token: write # OIDC token for npm trusted publishing and provenance
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: pnpm/action-setup@v6
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false # no caches in release builds
+
+      - name: Read package version
+        id: pkg
+        run: echo "version=$(node -p 'require("./package.json").version')" >> "$GITHUB_OUTPUT"
+
+      - name: Check registry for this version
+        id: check
+        run: |
+          version="${{ steps.pkg.outputs.version }}"
+          if npm view "sveltegram@${version}" version >/dev/null 2>&1; then
+            echo "published=true" >> "$GITHUB_OUTPUT"
+            echo "sveltegram@${version} is already on npm; nothing to publish."
+          else
+            echo "published=false" >> "$GITHUB_OUTPUT"
+            echo "sveltegram@${version} is not on npm yet; publishing."
+          fi
+
+      - name: Install dependencies
+        if: steps.check.outputs.published == 'false'
+        run: pnpm install --frozen-lockfile
+
+      - name: Check
+        if: steps.check.outputs.published == 'false'
+        run: pnpm check
+
+      - name: Lint
+        if: steps.check.outputs.published == 'false'
+        run: pnpm lint
+
+      - name: Build package
+        if: steps.check.outputs.published == 'false'
+        run: pnpm package
+
+      # Trusted publishing exchanges the OIDC token for a short-lived npm token,
+      # and attaches provenance automatically. No NPM_TOKEN secret is used.
+      - name: Publish
+        if: steps.check.outputs.published == 'false'
+        run: pnpm publish --no-git-checks --provenance

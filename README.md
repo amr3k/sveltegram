@@ -168,6 +168,32 @@ Then install dependencies:
 pnpm install
 ```
 
+## Checks
+
+CI runs these on every pull request:
+
+```sh
+pnpm format:check
+pnpm lint
+pnpm check
+pnpm package
+```
+
+## Releasing
+
+Releases are published from GitHub Actions. To cut a release, bump `version` in `package.json` on a branch and merge the PR to `main`. `.github/workflows/publish.yml` builds the package and publishes the new version to npm with provenance. It skips versions that already exist on the registry, so re-runs are safe.
+
+Publishing uses npm trusted publishing (OIDC), so no `NPM_TOKEN` secret is stored. The one-time setup is on npmjs.com → `sveltegram` → Settings → Trusted publishing:
+
+| Field                | Value          |
+| -------------------- | -------------- |
+| Provider             | GitHub Actions |
+| Organization or user | `amr3k`        |
+| Repository           | `sveltegram`   |
+| Workflow filename    | `publish.yml`  |
+
+The trusted publisher configuration expires if it does not complete a publish within two days, so add it right before cutting the next release.
+
 # TODO
 
 - [x] Add login widget
