@@ -10,15 +10,13 @@ This package allows you to embed telegram widgets in your svelte web application
 </div>
 
 [![Demo](https://img.shields.io/website?label=Demo&url=https%3A%2F%2Fsveltegram.a3k.me)](https://sveltegram.a3k.me)
-![GitHub branch checks state](https://img.shields.io/github/checks-status/amr3k/sveltegram/main)
+[![npm version](https://img.shields.io/npm/v/sveltegram)](https://www.npmjs.com/package/sveltegram)
 
 <!-- ![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/npm/sveltegram) -->
 <!-- ![npm](https://img.shields.io/npm/dw/sveltegram) -->
 <!-- ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/amr3k/sveltegram?color=8e4700) -->
 
 ![LICENSE](https://img.shields.io/github/license/amr3k/sveltegram?style=flat&color=fcdaff)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/amr3k/sveltegram?color=fffc35&label=Repo%20size)
-[![Hits-of-Code](https://hitsofcode.com/github/amr3k/sveltegram?branch=main)](https://hitsofcode.com/github/amr3k/sveltegram/view?branch=main)
 
 - [Sveltegram](#sveltegram)
   - [Demo \& Documentation](#demo--documentation)
